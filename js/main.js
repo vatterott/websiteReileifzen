@@ -230,13 +230,7 @@ async function loadMenu() {
                 item.NavItems.forEach(subItem => {
                     const subLi = document.createElement('li');
                     const subA = document.createElement('a');
-
-                    if (subItem.Icon) {
-                        subA.innerHTML = `<i class="${subItem.Icon}"></i> ${subItem.Name}`;
-                    } else {
-                        subA.textContent = subItem.Name;
-                    }
-
+                    subA.textContent = subItem.Name;
                     subA.href = "#";
                     subA.dataset.path = subItem.Path;
                     subA.dataset.sectionTitle = item.SectionTitle || item.Name; // Use parent name

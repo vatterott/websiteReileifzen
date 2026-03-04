@@ -12,84 +12,77 @@
           {
             "Name": "Startseite",
             "Path": "verkehrsverein/index.html",
-            "Icon": "fas fa-house",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Aktuelles",
             "Path": "verkehrsverein/aktuelles.html",
-            "Icon": "fas fa-newspaper",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Das Dorf",
             "Path": "verkehrsverein/dorf.html",
-            "Icon": "fas fa-map-location-dot",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Landschaft",
             "Path": "verkehrsverein/landschaft.html",
-            "Icon": "fas fa-mountain-sun",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Gastgeber",
             "Path": "verkehrsverein/gastgeber.html",
-            "Icon": "fas fa-bed",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Japan",
             "Path": "verkehrsverein/japan.html",
-            "Icon": "fas fa-torii-gate",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Kirschblütenfest",
             "Path": "verkehrsverein/kirschbluetenfest.html",
-            "Icon": "fas fa-seedling",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Archiv",
             "Path": "verkehrsverein/archiv.html",
-            "Icon": "fas fa-box-archive",
-            "cssFile": "",
-            "NavItems": []
-          },
-          {
-            "Name": "Chronik",
-            "Path": "verkehrsverein/Chronik/Index.html",
-            "Icon": "fas fa-book-open",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Vorstand",
             "Path": "verkehrsverein/vorstand.html",
-            "Icon": "fas fa-users",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Links",
             "Path": "verkehrsverein/links.html",
-            "Icon": "fas fa-link",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
              "Name": "Kontakt",
              "Path": "verkehrsverein/kontakt.html",
-             "Icon": "fas fa-envelope",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
           }
@@ -106,42 +99,42 @@
           {
             "Name": "Startseite",
             "Path": "gaensetraenke/index.html",
-            "Icon": "fas fa-house",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Buchungen",
             "Path": "gaensetraenke/bookings.html",
-            "Icon": "fas fa-calendar-check",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Info",
             "Path": "gaensetraenke/info.html",
-            "Icon": "fas fa-circle-info",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Bildergalerie",
             "Path": "gaensetraenke/galerie.html",
-            "Icon": "fas fa-images",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Vorstand",
             "Path": "gaensetraenke/vorstand.html",
-            "Icon": "fas fa-users",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Kontakt",
             "Path": "gaensetraenke/kontakt.html",
-            "Icon": "fas fa-envelope",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           }
@@ -159,56 +152,56 @@
           {
             "Name": "Startseite",
             "Path": "feuerwehr/index.html",
-            "Icon": "fas fa-house",
+            "Icon": "",
             "cssFile": "",
             "NavItems": []
           },
           {
              "Name": "Aktuelles",
              "Path": "feuerwehr/aktuelles.html",
-             "Icon": "fas fa-newspaper",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
           },
                     {
              "Name": "Einsätze",
              "Path": "feuerwehr/einsaetze.html",
-             "Icon": "fas fa-truck",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
           },
           {
              "Name": "Kommando & Wettkampgruppe",
              "Path": "feuerwehr/kommando.html",
-             "Icon": "fas fa-user-shield",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
           },
-          {
-             "Name": "Fahrzeug & Technik",
+           {
+             "Name": "Fahrzeuge & Technik",
              "Path": "feuerwehr/fahrzeug.html",
-             "Icon": "fas fa-screwdriver-wrench",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
-          },
+           },
           {
              "Name": "Archiv",
              "Path": "feuerwehr/archiv.html",
-             "Icon": "fas fa-box-archive",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
           },
           {
              "Name": "Dienstplan",
              "Path": "feuerwehr/dienstplan.html",
-             "Icon": "fas fa-calendar-days",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
           },
           {
              "Name": "Kontakt",
              "Path": "feuerwehr/kontakt.html",
-             "Icon": "fas fa-envelope",
+             "Icon": "",
              "cssFile": "",
              "NavItems": []
           }
