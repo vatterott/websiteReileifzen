@@ -66,13 +66,6 @@
             "NavItems": []
           },
           {
-            "Name": "Chronik",
-            "Path": "verkehrsverein/Chronik/index.html",
-            "Icon": "fas fa-newspaper",
-            "cssFile": "",
-            "NavItems": []
-          },
-          {
             "Name": "Vorstand",
             "Path": "verkehrsverein/vorstand.html",
             "Icon": "fas fa-users",
