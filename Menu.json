@@ -12,77 +12,77 @@
           {
             "Name": "Startseite",
             "Path": "verkehrsverein/index.html",
-            "Icon": "",
+            "Icon": "fas fa-house",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Aktuelles",
             "Path": "verkehrsverein/aktuelles.html",
-            "Icon": "",
+            "Icon": "fas fa-newspaper",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Das Dorf",
             "Path": "verkehrsverein/dorf.html",
-            "Icon": "",
+            "Icon": "fas fa-map-location-dot",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Landschaft",
             "Path": "verkehrsverein/landschaft.html",
-            "Icon": "",
+            "Icon": "fas fa-mountain",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Gastgeber",
             "Path": "verkehrsverein/gastgeber.html",
-            "Icon": "",
+            "Icon": "fas fa-bed",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Japan",
             "Path": "verkehrsverein/japan.html",
-            "Icon": "",
+            "Icon": "fas fa-torii-gate",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Kirschblütenfest",
             "Path": "verkehrsverein/kirschbluetenfest.html",
-            "Icon": "",
+            "Icon": "fas fa-seedling",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Archiv",
             "Path": "verkehrsverein/archiv.html",
-            "Icon": "",
+            "Icon": "fas fa-box-archive",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Vorstand",
             "Path": "verkehrsverein/vorstand.html",
-            "Icon": "",
+            "Icon": "fas fa-users",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Links",
             "Path": "verkehrsverein/links.html",
-            "Icon": "",
+            "Icon": "fas fa-link",
             "cssFile": "",
             "NavItems": []
           },
           {
              "Name": "Kontakt",
              "Path": "verkehrsverein/kontakt.html",
-             "Icon": "",
+             "Icon": "fas fa-envelope",
              "cssFile": "",
              "NavItems": []
           }
@@ -99,42 +99,42 @@
           {
             "Name": "Startseite",
             "Path": "gaensetraenke/index.html",
-            "Icon": "",
+            "Icon": "fas fa-house",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Buchungen",
             "Path": "gaensetraenke/bookings.html",
-            "Icon": "",
+            "Icon": "fas fa-calendar-check",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Info",
             "Path": "gaensetraenke/info.html",
-            "Icon": "",
+            "Icon": "fas fa-circle-info",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Bildergalerie",
             "Path": "gaensetraenke/galerie.html",
-            "Icon": "",
+            "Icon": "fas fa-images",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Vorstand",
             "Path": "gaensetraenke/vorstand.html",
-            "Icon": "",
+            "Icon": "fas fa-users",
             "cssFile": "",
             "NavItems": []
           },
           {
             "Name": "Kontakt",
             "Path": "gaensetraenke/kontakt.html",
-            "Icon": "",
+            "Icon": "fas fa-envelope",
             "cssFile": "",
             "NavItems": []
           }
@@ -152,56 +152,56 @@
           {
             "Name": "Startseite",
             "Path": "feuerwehr/index.html",
-            "Icon": "",
+            "Icon": "fas fa-house",
             "cssFile": "",
             "NavItems": []
           },
           {
              "Name": "Aktuelles",
              "Path": "feuerwehr/aktuelles.html",
-             "Icon": "",
+             "Icon": "fas fa-newspaper",
              "cssFile": "",
              "NavItems": []
           },
                     {
              "Name": "Einsätze",
              "Path": "feuerwehr/einsaetze.html",
-             "Icon": "",
+             "Icon": "fas fa-truck",
              "cssFile": "",
              "NavItems": []
           },
           {
              "Name": "Kommando & Wettkampgruppe",
              "Path": "feuerwehr/kommando.html",
-             "Icon": "",
+             "Icon": "fas fa-user-shield",
              "cssFile": "",
              "NavItems": []
           },
            {
              "Name": "Fahrzeuge & Technik",
              "Path": "feuerwehr/fahrzeug.html",
-             "Icon": "",
+             "Icon": "fas fa-screwdriver-wrench",
              "cssFile": "",
              "NavItems": []
            },
           {
              "Name": "Archiv",
              "Path": "feuerwehr/archiv.html",
-             "Icon": "",
+             "Icon": "fas fa-box-archive",
              "cssFile": "",
              "NavItems": []
           },
           {
              "Name": "Dienstplan",
              "Path": "feuerwehr/dienstplan.html",
-             "Icon": "",
+             "Icon": "fas fa-calendar-days",
              "cssFile": "",
              "NavItems": []
           },
           {
              "Name": "Kontakt",
              "Path": "feuerwehr/kontakt.html",
-             "Icon": "",
+             "Icon": "fas fa-envelope",
              "cssFile": "",
              "NavItems": []
           }

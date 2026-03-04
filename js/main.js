@@ -174,14 +174,13 @@ function closeSubmenuImmediately(clickedLink) {
     if (!topMenuItem) return;
 
     setSubmenuOpenState(topMenuItem, false);
-    topMenuItem.classList.add('submenu-closed');
+    topMenuItem.classList.add('submenu-hover-locked');
 
-    const unlockSubmenu = () => {
-        topMenuItem.classList.remove('submenu-closed');
-        topMenuItem.removeEventListener('mouseleave', unlockSubmenu);
+    const unlock = () => {
+        topMenuItem.classList.remove('submenu-hover-locked');
+        topMenuItem.removeEventListener('mouseleave', unlock);
     };
-
-    topMenuItem.addEventListener('mouseleave', unlockSubmenu);
+    topMenuItem.addEventListener('mouseleave', unlock);
 }
 
 async function loadMenu() {
@@ -230,7 +229,13 @@ async function loadMenu() {
                 item.NavItems.forEach(subItem => {
                     const subLi = document.createElement('li');
                     const subA = document.createElement('a');
-                    subA.textContent = subItem.Name;
+
+                    if (subItem.Icon) {
+                        subA.innerHTML = `<i class="${subItem.Icon}"></i> ${subItem.Name}`;
+                    } else {
+                        subA.textContent = subItem.Name;
+                    }
+
                     subA.href = "#";
                     subA.dataset.path = subItem.Path;
                     subA.dataset.sectionTitle = item.SectionTitle || item.Name; // Use parent name
