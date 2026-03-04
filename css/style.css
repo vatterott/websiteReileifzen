@@ -243,7 +243,7 @@ body {
 }
 
 .main-menu > li.submenu-open .submenu {
-    display: block;
+    display: block !important; /* Must beat submenu-hover-locked rule */
     animation: fadeIn 0.3s ease-out;
 }
 

@@ -98,6 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const topMenuItem = topMenuToggleLink.parentElement;
+            // Always clear any stale hover-lock before toggling (critical for Android Chrome)
+            topMenuItem.classList.remove('submenu-hover-locked');
             const shouldOpen = !topMenuItem.classList.contains('submenu-open');
 
             closeAllOpenSubmenus(topMenuItem);
@@ -154,6 +156,11 @@ document.addEventListener('DOMContentLoaded', () => {
 function setSubmenuOpenState(menuItem, isOpen) {
     if (!menuItem) return;
 
+    if (isOpen) {
+        // Always clear stale lock when explicitly opening
+        menuItem.classList.remove('submenu-hover-locked');
+    }
+
     menuItem.classList.toggle('submenu-open', isOpen);
 
     const triggerLink = menuItem.querySelector(':scope > a');
@@ -178,9 +185,22 @@ function closeSubmenuImmediately(clickedLink) {
 
     const unlock = () => {
         topMenuItem.classList.remove('submenu-hover-locked');
+        topMenuItem.removeEventListener('pointerleave', unlock);
         topMenuItem.removeEventListener('mouseleave', unlock);
+        document.removeEventListener('pointerdown', docUnlock);
     };
+
+    // docUnlock fires when the user taps/clicks anywhere outside — covers Android Chrome
+    const docUnlock = (ev) => {
+        if (!topMenuItem.contains(ev.target)) {
+            unlock();
+        }
+    };
+
+    topMenuItem.addEventListener('pointerleave', unlock);
     topMenuItem.addEventListener('mouseleave', unlock);
+    // Next interaction anywhere cleans up if pointer events didn't fire
+    document.addEventListener('pointerdown', docUnlock, { once: false });
 }
 
 async function loadMenu() {
