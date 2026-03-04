@@ -98,8 +98,8 @@ document.addEventListener('DOMContentLoaded', () => {
             e.preventDefault();
 
             const topMenuItem = topMenuToggleLink.parentElement;
-            // Always clear any stale hover-lock before toggling (critical for Android Chrome)
-            topMenuItem.classList.remove('submenu-hover-locked');
+            // Explicit click by the user — always clear the post-selection lock
+            topMenuItem.classList.remove('submenu-selected');
             const shouldOpen = !topMenuItem.classList.contains('submenu-open');
 
             closeAllOpenSubmenus(topMenuItem);
@@ -156,11 +156,6 @@ document.addEventListener('DOMContentLoaded', () => {
 function setSubmenuOpenState(menuItem, isOpen) {
     if (!menuItem) return;
 
-    if (isOpen) {
-        // Always clear stale lock when explicitly opening
-        menuItem.classList.remove('submenu-hover-locked');
-    }
-
     menuItem.classList.toggle('submenu-open', isOpen);
 
     const triggerLink = menuItem.querySelector(':scope > a');
@@ -181,21 +176,9 @@ function closeSubmenuImmediately(clickedLink) {
     if (!topMenuItem) return;
 
     setSubmenuOpenState(topMenuItem, false);
-    topMenuItem.classList.add('submenu-hover-locked');
-
-    // pointerleave fires reliably on both desktop (mouse move away) and
-    // Android Chrome (sticky hover clears when user taps a different element).
-    // Do NOT use a document-level fallback — that would remove the lock on the
-    // very next tap and re-enable Android's sticky :hover, causing the submenu
-    // to reappear over the page content.
-    const unlock = () => {
-        topMenuItem.classList.remove('submenu-hover-locked');
-        topMenuItem.removeEventListener('pointerleave', unlock);
-        topMenuItem.removeEventListener('mouseleave', unlock);
-    };
-
-    topMenuItem.addEventListener('pointerleave', unlock);
-    topMenuItem.addEventListener('mouseleave', unlock);
+    // Mark this item as "selection made" — hover will no longer reopen it.
+    // Only an explicit click on the main menu button removes this class.
+    topMenuItem.classList.add('submenu-selected');
 }
 
 async function loadMenu() {

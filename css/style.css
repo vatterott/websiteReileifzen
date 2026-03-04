@@ -237,8 +237,10 @@ body {
     animation: fadeIn 0.3s ease-out;
 }
 
-.main-menu > li.submenu-hover-locked:hover .submenu,
-.main-menu > li.submenu-hover-locked:focus-within .submenu {
+/* After a sub-item was selected, hover/focus-within must NOT reopen the submenu.
+   Only an explicit click on the main button (which removes this class) can reopen it. */
+.main-menu > li.submenu-selected:hover .submenu,
+.main-menu > li.submenu-selected:focus-within .submenu {
     display: none !important;
 }
 
