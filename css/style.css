@@ -554,7 +554,6 @@ a:hover {
     padding-top: 20px;
     flex-wrap: nowrap; /* Force single row if screen allows, else wrap */
     max-width: 100%;
-    overflow: hidden;
 }
 
 @media (max-width: 900px) {
@@ -566,6 +565,7 @@ a:hover {
         max-width: 100%;
         overflow: visible; /* Ensure rotated corners aren't clipped */
         gap: 16px;
+        padding-bottom: 50px; /* Increased extra space so rotated images aren't clipped at the bottom */
     }
     .main-crest img {
         height: auto;
