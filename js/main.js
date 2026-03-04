@@ -183,24 +183,19 @@ function closeSubmenuImmediately(clickedLink) {
     setSubmenuOpenState(topMenuItem, false);
     topMenuItem.classList.add('submenu-hover-locked');
 
+    // pointerleave fires reliably on both desktop (mouse move away) and
+    // Android Chrome (sticky hover clears when user taps a different element).
+    // Do NOT use a document-level fallback — that would remove the lock on the
+    // very next tap and re-enable Android's sticky :hover, causing the submenu
+    // to reappear over the page content.
     const unlock = () => {
         topMenuItem.classList.remove('submenu-hover-locked');
         topMenuItem.removeEventListener('pointerleave', unlock);
         topMenuItem.removeEventListener('mouseleave', unlock);
-        document.removeEventListener('pointerdown', docUnlock);
-    };
-
-    // docUnlock fires when the user taps/clicks anywhere outside — covers Android Chrome
-    const docUnlock = (ev) => {
-        if (!topMenuItem.contains(ev.target)) {
-            unlock();
-        }
     };
 
     topMenuItem.addEventListener('pointerleave', unlock);
     topMenuItem.addEventListener('mouseleave', unlock);
-    // Next interaction anywhere cleans up if pointer events didn't fire
-    document.addEventListener('pointerdown', docUnlock, { once: false });
 }
 
 async function loadMenu() {
