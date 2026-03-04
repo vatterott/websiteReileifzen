@@ -304,8 +304,9 @@ body {
 
 /* GLOBAL HEADER STYLE FOR LOADED CONTENT */
 .cms-page h1 {
-    /* Reset local margins to hit the edges of the parent container padding */
-    margin: -50px -50px 25px -50px;
+    /* Overshoot the padding generously on all sides so no sub-pixel gap can appear.
+       The parent's overflow:hidden clips everything cleanly. */
+    margin: -55px -60px 25px -60px;
     
     /* Full width banner adjustments */
     padding: 15px 50px;
@@ -323,7 +324,7 @@ body {
     letter-spacing: 1px;
     
     /* Box Model */
-    width: calc(100% + 100px); /* Counteract the padding of parent */
+    width: calc(100% + 120px); /* Overshoot left + right */
     border-radius: 0; 
 }
 
@@ -563,7 +564,7 @@ a:hover {
         align-items: center;
         width: 100%;
         max-width: 100%;
-        overflow: hidden;
+        overflow: visible; /* Ensure rotated corners aren't clipped */
         gap: 16px;
     }
     .main-crest img {
@@ -573,15 +574,15 @@ a:hover {
     .side-images {
         flex-direction: row !important;
         justify-content: center;
-        width: 90vw;
+        width: 100%;
         max-width: 100%;
-        gap: 3vw;
+        gap: 5vw;
     }
     .side-images img {
-        width: 42vw;
+        width: 30vw;
         height: auto;
         aspect-ratio: 16 / 10;
-        max-width: 100%;
+        max-width: 140px;
     }
     .welcome-text-box {
         padding: 30px 20px;
