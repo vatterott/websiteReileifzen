@@ -81,6 +81,20 @@ a:focus {
     width: 100px;
     height: auto;
     border-radius: 5px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .chr_article {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .chr_article img {
+        width: 100%;
+        max-height: 220px;
+        object-fit: cover;
+    }
 }
 
 .chr_article-info h3 {
