@@ -1,0 +1,49 @@
+
+/* ---------------------------------------------------------------------- */
+/* --- PERMANENT MENU COLORS (Specific Branding) --- */
+/* ---------------------------------------------------------------------- */
+
+/* Verkehrsverein Button (Bright Yellow) */
+.main-menu > li.verkehrsverein-btn > a {
+    color: #FFCE31; /* Use the requested yellow */
+    border-color: rgba(255, 206, 49, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6); /* Consistent shadow */
+}
+
+.main-menu > li.verkehrsverein-btn > a:hover,
+.main-menu > li.verkehrsverein-btn > a:focus {
+    background-color: #FFCE31;
+    color: #333333; /* Dark text for contrast against bright yellow */
+    border-color: #FFCE31;
+    box-shadow: 0 5px 15px rgba(255, 206, 49, 0.5);
+}
+
+/* Gänsetränke Button (Always Blue/Cyan) */
+.main-menu > li.gaensetranke-btn > a {
+    color: #0277bd; /* Deep Blue text */
+    border-color: rgba(2, 119, 189, 0.3);
+}
+
+.main-menu > li.gaensetranke-btn > a:hover,
+.main-menu > li.gaensetranke-btn > a:focus {
+    background-color: #0277bd;
+    color: #ffffff;
+    border-color: #0277bd;
+    box-shadow: 0 5px 15px rgba(2, 119, 189, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}
+
+/* Feuerwehr Button (Always Red/Orange) */
+.main-menu > li.feuerwehr-btn > a {
+    color: #D32F2F; /* Fire Red text */
+    border-color: rgba(211, 47, 47, 0.3);
+}
+
+.main-menu > li.feuerwehr-btn > a:hover,
+.main-menu > li.feuerwehr-btn > a:focus {
+    background-color: #D32F2F;
+    color: #ffffff;
+    border-color: #D32F2F;
+    box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+}

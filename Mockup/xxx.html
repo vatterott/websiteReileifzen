@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heimat und Verkehrsverein Reileifzen 1969 e.V.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ---------------------------------------------------------------------- */
+        /* --- GRUNDEINSTELLUNGEN & VARIABLEN (CSS CUSTOM PROPERTIES) --- */
+        /* ---------------------------------------------------------------------- */
+        :root {
+            /* Definition der Hauptfarben für Feuerwehr, Reileifzen und Gänsetränke */
+            --fire-red: #ff3b3f;
+            --reileifzen-yellow: #ffc400;
+            --gaensetranke-blue: #0056b3;
+
+            /* Dunkle Hintergründe */
+            /* Hintergrundfarbe der Boxen ist 90% deckend (10% transparent) */
+            --dark-black: #000000;
+            --box-bg-dark: rgba(30, 30, 30, 0.9);
+            --dropdown-bg: #2b2b2b;
+
+            /* Helle Schriftfarben und Leuchteffekte */
+            --light-grey: #e0e0e0;
+            --glow-yellow: #ffc400;
+            --blue-light: #0099ff;
+            --font-main: 'Roboto', sans-serif;
+            /* Gedämpfte goldene Farbe für das Glühen des Titels */
+            --title-gold: #f0e68c;
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- KEYFRAMES FÜR GLÜHEN --- */
+        /* ---------------------------------------------------------------------- */
+
+        @keyframes yellow-glow {
+            0% { text-shadow: 0 0 5px rgba(240, 230, 140, 0.5), 0 0 10px rgba(255, 196, 0, 0.4); }
+            50% { text-shadow: 0 0 10px var(--title-gold), 0 0 20px rgba(255, 196, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(240, 230, 140, 0.5), 0 0 10px rgba(255, 196, 0, 0.4); }
+        }
+
+        @keyframes subtle-glow {
+            0%, 100% { box-shadow: 0 0 10px 5px rgba(0, 86, 179, 0.4); }
+            50% { box-shadow: 0 0 15px 7px rgba(255, 196, 0, 0.6); }
+            100% { box-shadow: 0 0 10px 5px rgba(0, 86, 179, 0.4); }
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- BODY STYLES (GESAMT-LAYOUT) MIT WASSERZEICHEN --- */
+        /* ---------------------------------------------------------------------- */
+        body {
+            font-family: var(--font-main);
+            padding: 20px;
+            margin: 0;
+            background-color: var(--dark-black);
+            color: var(--light-grey);
+            line-height: 1.6;
+            border: none;
+            position: relative;
+            border-radius: 15px;
+            z-index: 1;
+        }
+
+        /* NEU: Das feststehende Wasserzeichen (50% sichtbar, um 180px nach unten verschoben) */
+        body::before {
+            content: '';
+            position: fixed;
+            left: 0;
+            /* WICHTIG: Verschiebt den Startpunkt um 180px nach unten */
+            top: 200px;
+            width: 100%;
+            /* Die Höhe bleibt 100% des Viewports, beginnt aber bei 200px */
+            height: 100%;
+            background-image: url('graf/Kirsch.jpg');
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            opacity: 0.8;
+            z-index: -2;
+        }
+
+        /* Äußerer Rahmen (unverändert GELB) */
+        body::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 5px solid var(--reileifzen-yellow);
+            border-radius: 15px;
+            transition: border-color 2s ease-in-out;
+            z-index: -1;
+            box-sizing: border-box;
+        }
+
+
+        /* ---------------------------------------------------------------------- */
+        /* --- HEADER & TITEL --- */
+        /* ---------------------------------------------------------------------- */
+        .header {
+            background-color: var(--dark-black);
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: none;
+            position: relative;
+            z-index: 100;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            color: var(--light-grey);
+            animation: yellow-glow 2s infinite alternate;
+            padding-bottom: 20px;
+        }
+
+
+        /* ---------------------------------------------------------------------- */
+        /* --- NAVIGATION --- */
+        /* ---------------------------------------------------------------------- */
+        .navbar {
+            background-color: var(--dark-black);
+            padding: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1000;
+            border-bottom: 3px solid var(--dark-black);
+            border-radius: 0;
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .main-menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            gap: 15px;
+        }
+
+        .main-menu > li {
+            position: relative;
+            flex-grow: 1;
+            text-align: center;
+            overflow: visible;
+            border-radius: 0;
+        }
+
+        .main-menu > li > a {
+            display: block;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 15px 10px;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            border-right: none;
+            color: #fff;
+            border-radius: 0;
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8);
+        }
+
+        .main-menu > li > a:hover,
+        .main-menu > li:focus-within > a {
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4);
+        }
+
+        .reileifzen-btn > a {
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black);
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.4);
+        }
+        .reileifzen-btn > a:hover,
+        .reileifzen-btn:focus-within > a {
+            background-color: #ffda66;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .feuerwehr-btn > a {
+            background-color: var(--fire-red);
+            color: var(--light-grey);
+        }
+
+        .gaensetranke-btn > a {
+            background-color: var(--gaensetranke-blue);
+            color: var(--light-grey);
+        }
+
+        .main-menu > li > a i { margin-right: 8px; }
+
+        .submenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background-color: var(--dropdown-bg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+            text-align: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .main-menu > li:hover > .submenu,
+        .main-menu > li:focus-within > .submenu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--light-grey);
+            border-bottom: 1px solid #3a3a3a;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .reileifzen-btn .submenu li a:hover {
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black);
+        }
+        .gaensetranke-btn .submenu li a:hover { background-color: var(--gaensetranke-blue); }
+        .feuerwehr-btn .submenu li a:hover { background-color: var(--fire-red); }
+
+        /* Mobile Navigations-Anpassungen */
+        @media (max-width: 768px) {
+            .navbar { margin: 0; width: 100%; border-radius: 0; }
+            .main-menu { flex-direction: column; gap: 5px; }
+            .main-menu > li { width: 100%; }
+            .submenu { position: static; max-height: 0; overflow: hidden; width: 100%; }
+            .main-menu > li:hover > .submenu,
+            .main-menu > li:focus-within > .submenu { max-height: 500px; transition: max-height 0.5s ease-in-out; }
+            /* Reduzierung der Hauptüberschriftengröße */
+            .header h1 { font-size: 1.8em; }
+
+            /* ACHTUNG: Der Top-Wert muss auch für Mobile ggf. angepasst werden */
+            body::before {
+                top: 110px; /* Angenommener Wert für mobile Header/Navbar */
+            }
+
+            /* FIX: NEUE SCHRIFTGRÖßEN FÜR MOBILE */
+            .page-headline {
+                /* Leicht hochgesetzt von 1.3em auf 1.4em */
+                font-size: 1.4em; 
+                word-break: normal;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
+            }
+
+            .section-title {
+                /* Weiter reduziert, um lange Wörter wie "Jahreshauptversammlung" zu fixieren */
+                font-size: 1.1em; 
+                word-break: normal;
+                -webkit-hyphens: auto;
+                -ms-hyphens: auto;
+                hyphens: auto;
+            }
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- HAUPTINHALT & INFOBEREICHE --- */
+        /* ---------------------------------------------------------------------- */
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 30px auto;
+            position: relative;
+            z-index: 10;
+        }
+
+        .page-headline {
+            color: var(--reileifzen-yellow);
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 2.5em;
+            text-align: center;
+            padding-bottom: 15px;
+            margin-top: 0;
+            border-bottom: 3px solid var(--reileifzen-yellow);
+            text-shadow: 0 0 5px rgba(255, 196, 0, 0.3);
+        }
+
+        .section-title {
+            color: var(--gaensetranke-blue);
+            font-weight: 700;
+            font-size: 1.8em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--gaensetranke-blue);
+        }
+
+        /* Ausnahme: Überschrift der Reservierungsbox soll keine Unterstreichung haben */
+        .info-box .section-title[style="border-bottom: none; margin-top: 0;"] {
+            border-bottom: none !important;
+        }
+
+        .info-box {
+            /* Verwendet die 90% deckende Hintergrundfarbe */
+            background-color: var(--box-bg-dark);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--reileifzen-yellow);
+            position: relative;
+            z-index: 11;
+        }
+
+        .highlight-event {
+            color: var(--gaensetranke-blue) !important;
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* NEUE STYLES FÜR RESERVIERUNGS-LINK: Angepasst an Dark-Mode/Gelb */
+        .reservierung-link {
+            display: inline-block;
+            /* Hintergrund ebenfalls 90% transparent */
+            background-color: var(--box-bg-dark);
+            color: var(--reileifzen-yellow);
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            border: 2px solid var(--reileifzen-yellow);
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 0 5px rgba(255, 196, 0, 0.4);
+        }
+
+        .reservierung-link:hover {
+            background-color: #333333; /* Dunkler beim Hover */
+            color: var(--glow-yellow);
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(255, 196, 0, 0.8); /* Starker Glow beim Hover */
+        }
+
+        /* BILD-STYLES: Responsiv und Zentriert */
+        .info-box img {
+            max-width: 100%;
+            max-height: 600px;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+
+        .disclaimer-box {
+            background-color: var(--dark-black);
+            border: 2px solid var(--reileifzen-yellow);
+            padding: 20px;
+            border-radius: 8px;
+            margin-top: 30px;
+            text-align: left;
+            position: relative;
+            z-index: 11;
+        }
+
+        .disclaimer-box a {
+            color: var(--reileifzen-yellow);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .disclaimer-box a:hover {
+            color: var(--glow-yellow);
+            text-decoration: underline;
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- FOOTER --- */
+        /* ---------------------------------------------------------------------- */
+
+        .footer {
+            position: relative;
+            overflow: hidden;
+            background-color: var(--dark-black);
+            text-align: center;
+            padding: 40px 0 40px;
+            margin-top: 60px;
+            z-index: 10;
+            border-radius: 10px;
+            animation: subtle-glow 4s infinite alternate;
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 10;
+            background-color: var(--dark-black);
+            padding: 0 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>HEIMAT UND VERKEHRSVEREIN REILEIFZEN 1969 E.V.</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul class="main-menu">
+            <li class="reileifzen-btn">
+                <a href="#"><i class="fas fa-house"></i> Reileifzen</a>
+                <ul class="submenu">
+                    <li><a href="reileifzen-aktuelles.html">Aktuelles</a></li>
+                    <li><a href="reileifzen-dorf.html">Das Dorf</a></li>
+                    <li><a href="reileifzen-landschaft.html">Landschaft</a></li>
+                    <li><a href="reileifzen-gastgeber.html">Gastgeber</a></li>
+                    <li><a href="reileifzen-japan.html">Japan</a></li>
+                    <li><a href="reileifzen-kirschbluetenfest.html">Kirschbluetenfest</a></li>
+                    <li><a href="reileifzen-archiv.html">Archiv</a></li>
+                    <li><a href="reileifzen-vorstand.html">Vorstand</a></li>
+                    <li><a href="reileifzen-links.html">Links</a></li>
+                    <li><a href="reileifzen-impressum.html">Impressum</a></li>
+                    <li><a href="reileifzen-datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </li>
+
+            <li class="gaensetranke-btn">
+                <a href="#"><i class="fas fa-utensils"></i> Gänsetränke</a>
+                <ul class="submenu">
+                    <li><a href="gaensetranke-home.html">Home</a></li>
+                    <li><a href="gaensetranke-galerie.html">Galerie</a></li>
+                    <li><a href="gaensetranke-buchungen.html">Buchungen</a></li>
+                    <li><a href="gaensetranke-kontakt.html">Kontakt</a></li>
+                    <li><a href="gaensetranke-vorstand.html">Vorstand</a></li>
+                    <li><a href="gaensetranke-info.html">Info</a></li>
+                </ul>
+            </li>
+
+            <li class="feuerwehr-btn">
+                <a href="#"><i class="fas fa-fire"></i> Feuerwehr</a>
+                <ul class="submenu">
+                    <li><a href="feuerwehr.html">Startseite</a></li>
+                    <li><a href="feuerwehr-kommando.html">Kommando</a></li>
+                    <li><a href="feuerwehr-wettkaempfe.html">Wettkämpfe</a></li>
+                    <li><a href="feuerwehr-fahrzeug.html">Fahrzeug und Technik</a></li>
+                    <li><a href="feuerwehr-dienstplan.html">Dienstplan</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <h2 class="page-headline">Termine und Veranstaltungen</h2>
+
+        <div class="info-box">
+            <h3 class="section-title">Termine 2025/2026</h3>
+
+            <p style="font-weight: 700; color: #ccc;">2025</p>
+            <p>13. Dezember 2025 – Glühweinfest vom Verkehrsverein in und um der Gänsetränke</p>
+            <p>31. Dezember 2025 – Silversterparty von der ARV</p>
+
+            <p style="font-weight: 700; color: #ccc; margin-top: 15px;">2026</p>
+            <p>06. Februar 2026 – Jahreshauptversammlung ARV</p>
+            <p>07. Februar 2026 – Jahreshauptversammlung Verkehrsverein</p>
+            <p class="highlight-event"><i class="fas fa-cherry"></i> 19. April 2026 – Kirschblütenfest</p>
+        </div>
+
+        <div class="info-box" style="text-align:center;">
+               <h3 class="section-title" style="border-bottom: none; margin-top: 0;">!!! Neuer Reservierungsplan !!!</h3>
+            <a class="reservierung-link" href="http://www.reileifzen.de/index.php?ID=buchungen.html" target="_blank">
+                <i class="fas fa-calendar-check"></i> Reservierungsplan Gänsetränke
+            </a>
+        </div>
+
+
+        <h2 class="page-headline">Aktuelles</h2>
+
+        <div class="info-box">
+            <h3 class="section-title">
+                <i class="fas fa-tree"></i> Vorweihnachtlicher Glanz:
+                <br>Verkehrsverein stellt Weihnachtsbaum auf
+            </h3>
+            <p>
+                Pünktlich zum ersten Advent ist die Dorfmitte bereit für die Weihnachtszeit:
+                Wie in jedem Jahr hat der Verkehrsverein die Ärmel hochgekrempelt und den traditionellen Weihnachtsbaum aufgestellt.
+            </p>
+            <p>
+                Es ist eine liebgewonnene Tradition, die verlässlich die „Weihnachtszeit“ im Ort einläutet.
+                Rechtzeitig zum Start in die Adventswochen rückten die Helfer des Verkehrsvereins aus,
+                um den Baum an seinem angestammten Platz in der Dorfmitte zu verankern.
+            </p>
+            <p>
+                Dank des ehrenamtlichen Einsatzes erstrahlt das Dorf nun wieder in festlichem Glanz.
+                Der Verkehrsverein sorgt damit nicht nur für optische Verschönerung,
+                sondern hält auch einen wichtigen Brauch lebendig, der Einheimische
+                und Besucher gleichermaßen auf das kommende Weihnachtsfest einstimmt.
+            </p>
+            <p>
+                Der Verkehrsverein wünscht allen Bürgerinnen und Bürgern eine besinnliche Adventszeit.!
+            </p>
+            <img src="graf/Archiv/2025/Baum.jpg" alt="Weihnachtsbaum vom Verkehrsverein">
+        </div>
+
+        <div class="info-box">
+            <h3 class="section-title">
+                <i class="fas fa-users"></i> Jahreshauptversammlung von der ARV
+            </h3>
+            <p>
+                Am vergangenen Dienstag, dem 25. November, fand die Jahreshauptversammlung der ARV statt.
+                Neben Rückblicken auf bauliche Maßnahmen stand vor allem die finanzielle Situation der „Gänsetränke“ im Fokus.
+            </p>
+            <p>
+                Der 1. Vorsitzende Friedrich Hoffmeister eröffnete die Versammlung und begrüßte die anwesenden Mitglieder.
+                Zu Beginn der Sitzung verlas Schriftführer Andreas Hoffmeister das Protokoll der vorangegangenen
+                Jahreshauptversammlung, welches von der Versammlung angenommen wurde.
+            </p>
+            <p>
+                In seinem Tätigkeitsbericht blickte Friedrich Hoffmeister auf ein nicht ganz so arbeitsreiches Jahr zurück.
+                Das zentrale Projekt war dabei der Bau der neuen Theke, der erfolgreich abgeschlossen werden konnte.
+                Darüber hinaus prägten routinemäßige Instandhaltungs- und Reparaturarbeiten sowie die regelmäßige Reinigung
+                und Pflege der Außenanlagen das Vereinsjahr.
+            </p>
+            <p>
+                Als kleinen Ausblick auf kommende Anschaffungen präsentierte Hoffmeister den Mitgliedern zudem
+                ein Muster der geplanten neuen Stühle für die „Gänsetränke“.
+            </p>
+            <p>
+                Im Anschluss legte Kassenwartin Carola Tacke den Kassenbericht vor und informierte
+                die Anwesenden detailliert über das Zahlenwerk des Vereins.
+            </p>
+            <p>
+                Unter dem Punkt „Verschiedenes“ ergriff der 2. Vorsitzende Thorben Grühn das Wort.
+                Er ging offen auf die derzeit angespannte finanzielle Lage der Gänsetränke ein.
+                Grühn fasste die Maßnahmen und Ereignisse des Jahres 2025 zusammen und gab einen ersten Einblick
+                in die Planungen, wie man den Herausforderungen in der Zukunft begegnen wolle.
+            </p>
+            <p>
+                Zum Abschluss der harmonischen Versammlung gab der 1. Vorsitzende Friedrich Hoffmeister bereits den Termin
+                für das nächste Treffen bekannt: Die kommende Jahreshauptversammlung
+                ist für den 6. Februar 2026 terminiert.
+            </p>
+            <img src="graf/Archiv/2025/ARV.jpg" alt="ARV">
+        </div>
+
+        <div class="info-box">
+            <h3 class="section-title">Preisskat und Knobeln vom Verkehrsverein</h3>
+            <p>
+                Am 15. November fand in der Gänsetränke unser alljährliches Skat- und Knobelturnier statt.
+                In gemütlicher Atmosphäre trafen sich zahlreiche Teilnehmende, um bei spannenden Runden ihr Können
+                unter Beweis zu stellen. Es wurde gelacht, gefachsimpelt und natürlich eifrig um
+                Punkte gekämpft – der Spaß stand dabei stets im Vordergrund.
+            </p>
+            <p>
+                Am Ende des Abends standen die Gewinner fest:
+                <br>
+                <span class="highlight-event" style="color: var(--reileifzen-yellow);">✨ Justina Eikhoff setzte sich erfolgreich beim Knobeln durch,</span>
+                <br>
+                <span class="highlight-event" style="color: var(--reileifzen-yellow);">♣ Boris Haut errang den Sieg beim Skat.</span>
+                <br>
+                Wir gratulieren beiden herzlich und freuen uns schon jetzt auf das nächste Turnier!
+            </p>
+            <img src="graf/Archiv/2025/skat.jpg" alt="Skat">
+        </div>
+
+        <div class="info-box">
+            <h3 class="section-title">Arbeitseinsatz an der Weser und der Gänsetränke</h3>
+            <p>
+                Am 01. November haben wir die Wellnessoase an der Weser abgebaut. Viele helfende Hände
+                haben dazu beigetragen das wir in windeseile fertig waren. Da wir so viele Helfer waren
+                haben wir die Chance genutzt und auch noch die Gänsetränke winterfest gemacht.
+                Des weiteren haben wir an der neuen Bestuhlung für die Gänsetränke gearbeitet.
+                Es ist eine ganz schön mühseelige Arbeit die alten Poster zu entfernen um Platz für
+                neue Bezüge zu schaffen.
+            </p>
+            <img src="graf/Archiv/2025/Weserleer.jpg" alt="Weserleer">
+        </div>
+
+        <div class="info-box">
+            <h3 class="section-title">Kein Spielplatz mehr an der Weser</h3>
+            <p>
+                Leider können wir keinen neuen Spielplatz mehr an der Weser errichten. Die neuen Richtlinien untersagen dieses Vorhaben.
+                Lediglich das Volleyballfeld darf im kommenden Jahr wieder aufgebaut werden.
+            </p>
+            <img src="graf/Archiv/2025/Spielplatz.jpg" alt="Spielplatz">
+        </div>
+
+        <div class="info-box">
+            <h3 class="section-title">Kirschblütenfest</h3>
+            <p>
+                Das Kirschblütenfest war ein voller Erfolg. Bei bestem Wetter strömten die Besucher auf das Fest
+                und genossen das Programm. Wir freuen uns schon auf das nächste Jahr, wenn wir wieder
+                unsere japanischen Freunde in Reileifzen begrüßen dürfen.
+            </p>
+            <img src="graf/Archiv/2025/Kirsch01.jpg" alt="Kirschblütenfest Bild 1">
+            <img src="graf/Archiv/2025/Kirsch02.jpg" alt="Kirschblütenfest Bild 2">
+            <img src="graf/Archiv/2025/Kirsch03.jpg" alt="Kirschblütenfest Bild 3">
+        </div>
+
+        <div class="disclaimer-box">
+            <h3 class="section-title" style="color: var(--reileifzen-yellow); border-bottom: 2px solid var(--reileifzen-yellow);">
+                <i class="fas fa-hand-heart"></i> In eigener Sache und um die Arbeit von jedem zu würdigen
+            </h3>
+            <p>
+                Wir freuen uns über jeden, der sich in irgendeiner Form einbringt und uns unterstützt.
+                Das äußert sich vorallem durch einige Einwohner, die uns von sich aus ohne Bitten unterstützen.
+                Es ist genau dieses Verhalten, Denken und Engagemant der Bewohner von Reileifzen, dass uns
+                von der breiten Masse abhebt und wir hoffen, dass dieser Einsatz und dieses Engagement wieder
+                viel mehr wird. Deswegen scheut euch nicht Initatieve zu ergreifen, oder zu einem Arbeitseinsatz
+                zu kommen. Es ist jeder willkommen und wir freuen uns über jeden der unseren schönen Ort
+                mit uns noch schöner macht.
+            </p>
+            <p style="text-align:center; margin: 20px 0;">
+                <a href="mailto:Verkehrsverein@Reileifzen.de">Verkehrsverein@Reileifzen.de</a>
+            </p>
+            <p>
+                Oder sprecht unseren 1. Vorsitzenden **Thorben Grühn** sowie
+                2. Vorsitzenden **Tobias Hoffmeister** an.
+            </p>
+        </div>
+
+    </main>
+    <footer class="footer">
+
+        <div class="footer-content">
+            <p>Verkehrsverein Reileifzen | Kontakt: verkehrsverein@reileifzen.de</p>
+            <p>© 2026 | Impressum | Datenschutz</p>
+        </div>
+    </footer>
+
+</body>
+</html>

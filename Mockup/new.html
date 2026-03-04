@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Heimat und Verkehrsverein Reileifzen 1969 e.V.</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        :root {
+            --bg-creme: #ffffcc; /* Dein sanftes Original-Gelb */
+            --gaensetranke-blue: #0056b3;
+            --reileifzen-yellow: #ffc400;
+            --fire-red: #d32f2f;
+            --text-main: #333333;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            background-color: var(--bg-creme);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* --- HEADER --- */
+        .header {
+            padding: 30px 20px;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 1.8em;
+            color: var(--gaensetranke-blue);
+            text-transform: uppercase;
+        }
+
+        /* --- DEINE URSPRÜNGLICHE MENÜ-STRUKTUR (TABELLE) --- */
+        .nav-container {
+            width: 100%;
+            background-color: #444; /* Dunkler Kontrast für die Leiste */
+            padding: 5px 0;
+        }
+
+        .menu-table {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            border-collapse: collapse;
+        }
+
+        .menu-table td {
+            text-align: center;
+            padding: 0;
+            position: relative;
+        }
+
+        .menu-table a {
+            display: block;
+            padding: 12px 5px;
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 13px;
+            text-transform: uppercase;
+            transition: 0.2s;
+        }
+
+        /* Hover-Farben passend zu den Vereinen */
+        .menu-reileifzen:hover { background-color: var(--reileifzen-yellow); color: #000 !important; }
+        .menu-gaensetranke:hover { background-color: var(--gaensetranke-blue); }
+        .menu-feuerwehr:hover { background-color: var(--fire-red); }
+
+        /* Dropdown Logik für die alte Struktur */
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 0 0 4px 4px;
+        }
+
+        .dropdown-content a {
+            color: #333 !important;
+            padding: 10px 15px;
+            text-transform: none;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-content a:hover { background-color: #eee; color: var(--gaensetranke-blue) !important; }
+        .menu-table td:hover .dropdown-content { display: block; }
+
+        /* --- CONTENT --- */
+        .container {
+            max-width: 900px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .info-box {
+            background-color: #ffffff;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 2px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            border-left: 4px solid var(--gaensetranke-blue);
+        }
+
+        .section-title {
+            margin-top: 0;
+            color: var(--gaensetranke-blue);
+            font-size: 1.3em;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 8px;
+        }
+
+        .info-box img {
+            max-width: 100%;
+            height: auto;
+            margin-top: 15px;
+        }
+
+        /* --- FOOTER --- */
+        .footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            font-size: 0.8em;
+            margin-top: 40px;
+        }
+        
+        .footer a { color: var(--reileifzen-yellow); text-decoration: none; }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>Heimat- und Verkehrsverein Reileifzen e.V.</h1>
+    </header>
+
+    <div class="nav-container">
+        <table class="menu-table">
+            <tr>
+                <td>
+                    <a href="index.php" class="menu-reileifzen">Reileifzen</a>
+                    <div class="dropdown-content">
+                        <a href="index.php?ID=reileifzen-aktuelles.html">Aktuelles</a>
+                        <a href="index.php?ID=reileifzen-dorf.html">Das Dorf</a>
+                        <a href="index.php?ID=reileifzen-gastgeber.html">Gastgeber</a>
+                        <a href="index.php?ID=reileifzen-japan.html">Japan & Kirschblüte</a>
+                    </div>
+                </td>
+                <td>
+                    <a href="index.php?ID=gaensetranke-home.html" class="menu-gaensetranke">Gänsetränke</a>
+                    <div class="dropdown-content">
+                        <a href="index.php?ID=gaensetranke-buchungen.html">Buchungen</a>
+                        <a href="index.php?ID=gaensetranke-galerie.html">Galerie</a>
+                    </div>
+                </td>
+                <td>
+                    <a href="index.php?ID=feuerwehr.html" class="menu-feuerwehr">Feuerwehr</a>
+                    <div class="dropdown-content">
+                        <a href="index.php?ID=feuerwehr-fahrzeug.html">Technik</a>
+                        <a href="index.php?ID=feuerwehr-dienstplan.html">Dienstplan</a>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <main class="container">
+        
+        <div class="info-box" style="border-left-color: var(--reileifzen-yellow);">
+            <h3 class="section-title">Nächste Termine</h3>
+            <p><strong>13.12.2025:</strong> Glühweinfest</p>
+            <p><strong>19.04.2026:</strong> Kirschblütenfest</p>
+        </div>
+
+        <div class="info-box">
+            <h3 class="section-title">Aktuelles aus dem Dorf</h3>
+            <p>Der Weihnachtsbaum im Dorfzentrum wurde erfolgreich aufgestellt. Wir danken allen Helfern für den ehrenamtlichen Einsatz!</p>
+            <img src="graf/Archiv/2025/Baum.jpg" alt="Dorfzentrum">
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <p>Verkehrsverein Reileifzen 1969 e.V. | <a href="index.php?ID=impressum.html">Impressum</a></p>
+    </footer>
+
+</body>
+</html>

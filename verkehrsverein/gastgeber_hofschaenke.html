@@ -1,0 +1,114 @@
+<div class="cms-page">
+    <style>
+        .hof-headline {
+            font-weight: bold;
+            color: #0066cc;
+            font-size: 3em;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px 0 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px #333;
+        }
+
+        .hof-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            align-items: center; /* Center vertically */
+        }
+
+        .hof-item {
+            text-align: center;
+        }
+
+        .hof-item img {
+            width: 100%;
+            height: auto;
+            max-width: 300px;
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
+        }
+
+        .hof-contact {
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.5;
+            padding: 10px;
+        }
+
+        .hof-footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        @media (max-width: 768px) {
+            .hof-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            /* Reorder for mobile so text isn't stuck between two random images? 
+               Original table: Row 1: Img, Text, Img. Row 2: Img, Img, Img.
+               Stacked: Img, Text, Img, Img, Img, Img. This is fine.
+            */
+        }
+    </style>
+
+    <h1 class="hof-headline">Zur Hofschänke</h1>
+
+    <div class="hof-grid">
+        <!-- Row 1 -->
+        <div class="hof-item">
+            <img src="verkehrsverein/images/hofschaenke_G4.jpg" alt="Hofschänke Bild 4">
+        </div>
+        <div class="hof-item hof-contact">
+            <div>
+                <strong>Ansprechpartner:</strong><br>
+                Maria Vorwohlt<br>
+                Telefon: (0 55 35) 15 62<br>
+                Lange Str. 23<br>
+                37639 Reileifzen<br><br>
+                <strong>Öffnungszeiten:</strong><br>
+                Mittwoch ab 18:00 Uhr<br>
+                Freitag ab 18:00 Uhr<br>
+                Sonn- und Feiertage ab 10:00 Uhr<br>
+                und nach Vereinbarung
+            </div>
+        </div>
+        <div class="hof-item">
+            <img src="verkehrsverein/images/hofschaenke_G2.jpg" alt="Hofschänke Bild 2">
+        </div>
+
+        <!-- Row 2 -->
+        <div class="hof-item">
+            <img src="verkehrsverein/images/hofschaenke_G3.jpg" alt="Hofschänke Bild 3">
+        </div>
+        <div class="hof-item">
+            <img src="verkehrsverein/images/hofschaenke_G1.jpg" alt="Hofschänke Bild 1">
+        </div>
+        <div class="hof-item">
+            <img src="verkehrsverein/images/hofschaenke_G5.jpg" alt="Hofschänke Bild 5">
+        </div>
+    </div>
+
+    <div class="hof-footer">
+        <p>Die kleine gemütliche Gaststube bietet Platz für bis zu 30 Personen und zusätzlich gibt es eine überdachte Freifläche.<br>
+        Aus der Küche kommen gut bürgerliche Gerichte und im Sommer bieten wir auch Kaffee und hausgemachten Kuchen an.</p>
+    </div>
+
+    <div class="nav-buttons" style="margin-top:50px;">
+        <a href="#" class="back-btn" onclick="history.back(); return false;">
+            zurück
+        </a>
+    </div>
+
+</div>

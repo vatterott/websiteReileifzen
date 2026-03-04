@@ -1,0 +1,232 @@
+/* ---------------------------------------------------------------------- */
+/* --- THEME: REILEIFZEN (GOLD/AMBER) - LIGHT MODE --- */
+/* ---------------------------------------------------------------------- */
+
+:root {
+    /* Main Theme Colors */
+    --theme-primary: #FFCE31;   
+    --theme-secondary: #ff8f00; 
+    --theme-accent: #333333;    
+    
+    /* Subtle Warm Tint for backgrounds */
+    --bg-deep: #fffcf5;
+    --card-hover-bg: #fff8e1;
+    
+    --shadow-element: 0 5px 15px rgba(255, 206, 49, 0.3);
+}
+
+/* ---------------------------------------------------------------------- */
+/* GLOBAL LAYOUT */
+/* ---------------------------------------------------------------------- */
+
+body {
+    background-color: var(--bg-deep);
+
+    background-image: 
+        linear-gradient(
+            to bottom, 
+            rgba(255, 255, 255, 0.10), 
+            rgba(255, 252, 245, 0.75)
+        ),
+        url('../verkehrsverein/images/cherry_blossom.jpg');
+
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+}
+
+/* ---------------------------------------------------------------------- */
+/* CONTENT GLASS EFFECT (ARCHIV DESIGN GLOBAL) */
+/* ---------------------------------------------------------------------- */
+
+.cms-page {
+    background: rgba(255, 255, 212, 0.7);
+    backdrop-filter: blur(2px);
+    -webkit-backdrop-filter: blur(2px);
+
+    border-radius: 18px;
+    padding: 40px 20px 60px;
+    overflow-x: hidden;
+
+    font-family: sans-serif;
+    text-align: center;
+}
+
+/* Fallback ohne Blur */
+@supports not (backdrop-filter: blur(2px)) {
+    .cms-page {
+        background: rgba(255, 255, 212, 0.9);
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+/* GOLD STYLING */
+/* ---------------------------------------------------------------------- */
+
+.info-box, 
+.navbar, 
+.quick-links .card {
+    border-color: rgba(255, 206, 49, 0.4);
+    border-top-color: var(--theme-primary);
+}
+
+/* Header Style */
+.header h1 {
+    color: var(--theme-primary);
+    text-shadow: 
+        2px 2px 0px #000000,
+        0 5px 10px rgba(0, 0, 0, 0.2);
+
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+/* ---------------------------------------------------------------------- */
+/* DESIGN TRENNLINIE (GLOBAL) */
+/* ---------------------------------------------------------------------- */
+
+.cms-page hr {
+    border: none !important;
+    height: 7px; 
+    width: 95%;   
+    max-width: 900px; 
+    
+    background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        var(--theme-primary) 15%, 
+        #ffd84d 50%, 
+        var(--theme-primary) 85%, 
+        transparent 100%
+    );
+
+    margin: 70px auto;
+    display: block;
+    border-radius: 999px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+}
+
+/* ---------------------------------------------------------------------- */
+/* BILDER GLOBAL (UNTEREINANDER & KOMPAKT) */
+/* ---------------------------------------------------------------------- */
+
+.cms-page img {
+    max-width: 500px;         /* Maximale Breite der Bilder */
+    width: 100%;             /* Flexibel auf kleineren Bildschirmen */
+    height: auto;
+    border-radius: 14px;
+    margin: 25px auto;       /* Abstand oben/unten und Zentrierung */
+    display: block;          /* Erzwingt das Untereinanderstehen */
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    transition: transform 0.3s ease;
+}
+
+.cms-page img:hover {
+    transform: scale(1.02);  /* Dezenter Zoom beim Hover */
+}
+
+/* ---------------------------------------------------------------------- */
+/* BUTTON SYSTEM GLOBAL */
+/* ---------------------------------------------------------------------- */
+
+/* Standard Buttons & Video-Links */
+.cms-page .news-item a,
+.cms-page .video-container a,
+.cms-page .nav-buttons a:not(.back-btn) {
+    display: inline-block;
+    background: var(--theme-primary) !important;
+    color: #000 !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.2s ease-in-out;
+    margin: 10px 5px;
+    min-width: 180px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cms-page .news-item a:hover,
+.cms-page .video-container a:hover,
+.cms-page .nav-buttons a:not(.back-btn):hover {
+    filter: brightness(1.1);
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6) !important;
+    border-color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Back Button */
+.cms-page .back-btn {
+    display: inline-block;
+    background: #555 !important;
+    color: #fff !important;
+    padding: 12px 24px !important;
+    border-radius: 6px !important;
+    text-decoration: none !important;
+    font-weight: bold;
+    border: 2px solid rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4) !important;
+    transition: all 0.2s ease-in-out;
+    margin: 10px 5px;
+    min-width: 180px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.cms-page .back-btn:hover {
+    background: #333 !important;
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Button Container */
+.cms-page .nav-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    padding: 40px 10px 0;
+    box-sizing: border-box;
+}
+
+/* ---------------------------------------------------------------------- */
+/* MOBILE OPTIMIERUNG */
+/* ---------------------------------------------------------------------- */
+
+@media (max-width: 600px) {
+
+    .cms-page .nav-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cms-page .nav-buttons a,
+    .cms-page .news-item a,
+    .cms-page .video-container a {
+        width: 90%;
+        max-width: 320px;
+        min-width: 0 !important;
+    }
+    
+    .cms-page img {
+        max-width: 100%; /* Auf dem Handy volle Breite nutzen */
+    }
+}
+
+/* ---------------------------------------------------------------------- */
+/* FOOTER & TERMINE */
+/* ---------------------------------------------------------------------- */
+
+.termine {
+    list-style: none !important;
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.termine li {
+    margin-bottom: 8px;
+}

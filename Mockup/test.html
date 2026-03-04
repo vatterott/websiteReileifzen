@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feuerwehr Reileifzen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&display=swap" rel="stylesheet"> 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ---------------------------------------------------------------------- */
+        /* --- GRUNDEINSTELLUNGEN & VARIABLEN (CSS CUSTOM PROPERTIES) --- */
+        /* ---------------------------------------------------------------------- */
+        :root {
+            /* Definition der Hauptfarben für Feuerwehr, Reileifzen und Gänsetränke */
+            --fire-red: #ff3b3f; 
+            --reileifzen-yellow: #ffc400; 
+            --gaensetranke-blue: #0056b3; 
+            
+            /* Dunkle Hintergründe */
+            --dark-black: #000000; 
+            --box-bg-dark: #1e1e1e; 
+            --dropdown-bg: #2b2b2b; 
+            
+            /* Helle Schriftfarben und Leuchteffekte */
+            --light-grey: #e0e0e0;
+            --glow-yellow: #ffc400; 
+            --glow-orange: #ff4500; 
+            --blue-light: #0099ff;
+            --font-main: 'Roboto', sans-serif;
+            /* Gedämpfte goldene Farbe für den Titel */
+            --title-gold: #f0e68c; 
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- KEYFRAMES FÜR BLINKENDEN RAHMEN UND GLÜHEN --- */
+        /* ---------------------------------------------------------------------- */
+        
+        /* Definiert die Farben für die Rand-Animation (wechselt zwischen Rot und Hellblau) */
+        @keyframes border-blink {
+            0%, 100% { border-color: var(--fire-red); }
+            50% { border-color: var(--blue-light); }
+        }
+
+        /* Definiert das Flackern/Glühen des Haupttitels (gedämpftes Glühen) */
+        @keyframes fire-glow {
+            /* Gedämpftes Glühen */
+            0% { text-shadow: 0 0 5px rgba(240, 230, 140, 0.5), 0 0 10px rgba(255, 69, 0, 0.4); }
+            50% { text-shadow: 0 0 10px var(--title-gold), 0 0 20px rgba(255, 69, 0, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(240, 230, 140, 0.5), 0 0 10px rgba(255, 69, 0, 0.4); }
+        }
+        
+        /* Definiert das sanfte Glühen des Footer-Bereichs */
+        @keyframes subtle-glow {
+            0%, 100% { box-shadow: 0 0 10px 5px rgba(255, 69, 0, 0.4); }
+            50% { box-shadow: 0 0 15px 7px rgba(255, 140, 0, 0.6); }
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- BODY STYLES (GESAMT-LAYOUT) --- */
+        /* ---------------------------------------------------------------------- */
+        body {
+            font-family: var(--font-main);
+            /* Innenabstand, um den Rand (vom Pseudo-Element) sichtbar zu halten */
+            padding: 20px; 
+            margin: 0;
+            background-color: var(--dark-black); 
+            color: var(--light-grey);
+            line-height: 1.6;
+            border: none; 
+            /* Notwendig für die Positionierung des blinkenden ::before-Elements */
+            position: relative;
+            /* Rundet die Ecken des Inhalts ab */
+            border-radius: 15px; 
+            z-index: 1; 
+        }
+        
+        /* Pseudo-Element, das den blinkenden Rand darstellt */
+        body::before {
+            content: '';
+            position: absolute;
+            /* Spannt das Element über den gesamten Body-Bereich (alle 4 Kanten = 0) */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            
+            /* Der sichtbare, blinkende Rand */
+            border: 5px solid var(--fire-red);
+            /* Rundet die äußeren Ecken des Randes ab */
+            border-radius: 15px; 
+            /* Wendet die Rot/Blau-Blink-Animation an */
+            animation: border-blink 4s infinite alternate;
+            
+            /* Erzeugt einen weichen Übergang beim Blinken */
+            transition: border-color 2s ease-in-out;
+            /* Stellt sicher, dass der Rand hinter dem Hauptinhalt und der Navigation liegt */
+            z-index: -1; 
+            /* Stellt sicher, dass die Breite des Borders nicht zum Inhalt zählt */
+            box-sizing: border-box;
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- HEADER & TITEL --- */
+        /* ---------------------------------------------------------------------- */
+        .header {
+            background-color: var(--dark-black); 
+            padding: 20px 0;
+            text-align: center;
+            /* Rand unten entfernt, um die Rundung der Navbar zuzulassen */
+            border-bottom: none; 
+            position: relative; 
+            z-index: 100;
+        }
+
+        .header h1 {
+            margin: 0;
+            /* Moderne, technische Orbitron Schriftart */
+            font-size: 3em; 
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif; 
+            color: var(--light-grey);
+            
+            /* Wendet die Glüh-Animation auf den Haupttitel an */
+            animation: fire-glow 2s infinite alternate;
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- NAVIGATION --- */
+        /* ---------------------------------------------------------------------- */
+        .navbar {
+            /* Hintergrund auf tiefstes Schwarz gesetzt */
+            background-color: var(--dark-black);
+            padding: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1000; 
+            border-bottom: 3px solid var(--dark-black); 
+            /* Abrundung entfernt */
+            border-radius: 0;
+            /* Zentrierung für die korrekte Ausrichtung */
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 auto; 
+        }
+
+        .main-menu {
+            /* Erstellt eine flexible Reihe für die Hauptlinks */
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            
+            /* Horizontaler Abstand zwischen den Buttons (15px) */
+            gap: 15px; 
+        }
+
+        .main-menu > li {
+            /* Setzt die Links auf relative Position für die Dropdown-Menüs */
+            position: relative;
+            /* Erlaubt den Buttons, sich die Breite zu teilen, mit 15px Abstand dazwischen */
+            flex-grow: 1; 
+            text-align: center;
+            overflow: visible; 
+            border-radius: 0; 
+        }
+        
+        /* Abrundungsregeln entfernt */
+        .main-menu > li:first-child { border-radius: 0; }
+        .main-menu > li:last-child { border-radius: 0; }
+
+
+        .main-menu > li > a {
+            /* Standard-Link-Styles */
+            display: block;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 15px 10px;
+            /* Transition für den Schatten hinzugefügt */
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            
+            /* Vertikaler Rand entfernt */
+            border-right: none; 
+            color: #fff; 
+            border-radius: 0; 
+            
+            /* Starker Weichgezeichneter, sanft ins Schwarz übergehender, innerer Schatten */
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8); 
+        }
+        
+        .main-menu > li:last-child > a { 
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8); 
+        }
+        
+        /* Hover-Effekt: Schatten bei Hover leicht reduzieren, um Interaktion zu zeigen */
+        .main-menu > li > a:hover,
+        .main-menu > li:focus-within > a {
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.4); 
+        }
+        
+        /* Farben für das Reileifzen-Element (Gelb) */
+        .reileifzen-btn > a {
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black);
+            /* Schattenfarbe für helle Buttons eventuell anpassen (etwas weniger intensiv) */
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.4); 
+        }
+        .reileifzen-btn > a:hover,
+        .reileifzen-btn:focus-within > a {
+            background-color: #ffda66;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); 
+        }
+        
+        /* Farben für das Feuerwehr-Element (Rot) */
+        .feuerwehr-btn > a {
+            background-color: var(--fire-red);
+            color: var(--light-grey);
+        }
+
+        /* Farben für das Gänsetränke-Element (Blau) */
+        .gaensetranke-btn > a {
+            background-color: var(--gaensetranke-blue);
+            color: var(--light-grey);
+        }
+        
+        .main-menu > li > a i { margin-right: 8px; }
+
+        /* Dropdown-Menüs (Submenus) */
+        .submenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            /* Dropdown nimmt die volle Breite des übergeordneten LI ein */
+            width: 100%; 
+            min-width: initial;
+            
+            background-color: var(--dropdown-bg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+            
+            /* Zentrierung des Dropdowns selbst */
+            text-align: center; 
+            
+            /* Standardmäßig ausgeblendet */
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        /* Wichtig: Auf Desktop muss visibility: visible gesetzt werden, damit das Menü beim Hover geöffnet wird */
+        .main-menu > li:hover > .submenu,
+        .main-menu > li:focus-within > .submenu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hover-Farben für Submenu-Links */
+        .submenu li a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--light-grey);
+            border-bottom: 1px solid #3a3a3a;
+            
+            /* Text zentrieren und Unterstreichung entfernen */
+            text-align: center; 
+            text-decoration: none;
+        }
+        
+        .feuerwehr-btn .submenu li a:hover { background-color: var(--fire-red); }
+        .reileifzen-btn .submenu li a:hover { 
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black); 
+        }
+        .gaensetranke-btn .submenu li a:hover { background-color: var(--gaensetranke-blue); }
+
+        /* Anpassungen für kleinere Bildschirme (Mobile) */
+        @media (max-width: 768px) {
+            .navbar {
+                /* Auf Mobilgeräten volle Breite und keine Ränder */
+                margin: 0;
+                width: 100%;
+                border-radius: 0;
+            }
+            .main-menu { 
+                flex-direction: column; 
+                /* Vertikaler Abstand auf Mobilgeräten */
+                gap: 5px;
+            }
+            .main-menu > li { width: 100%; }
+            /* Mobile: Entfernt die abgerundeten Ecken, da die Links gestapelt werden */
+            .main-menu > li:first-child,
+            .main-menu > li:last-child {
+                border-radius: 0;
+            }
+            .submenu {
+                /* Lässt das Dropdown direkt unter dem Hauptlink erscheinen */
+                position: static;
+                max-height: 0;
+                overflow: hidden;
+                width: 100%; /* Auf Mobilgeräten volle Breite */
+            }
+            /* Zeigt das Submenu auf Mobile als ausklappbaren Bereich an */
+            .main-menu > li:hover > .submenu,
+            .main-menu > li:focus-within > .submenu {
+                max-height: 500px;
+                transition: max-height 0.5s ease-in-out;
+            }
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- HAUPTINHALT & INFOBEREICHE --- */
+        /* ---------------------------------------------------------------------- */
+
+        /* Zentrierter Container für den Hauptinhalt */
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 30px auto; 
+        }
+
+        .section-title {
+            color: var(--light-grey); 
+            font-weight: 700;
+            font-size: 2.2em;
+            border-bottom: 3px solid var(--fire-red);
+            padding-bottom: 5px;
+        }
+
+        /* Flexbox für nebeneinanderliegende Elemente (z.B. in der Infobox) */
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .flex-item { flex: 1; }
+
+        /* Dunkle Boxen für Hervorhebungen (z.B. "Wir suchen Verstärkung") */
+        .info-box {
+            background-color: var(--box-bg-dark);
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-box h3 { color: var(--fire-red); }
+        
+        .image-responsive {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+            .flex-container { flex-direction: column; }
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- FOOTER MIT FEUER-EFFEKT --- */
+        /* ---------------------------------------------------------------------- */
+
+        .footer {
+            position: relative; 
+            overflow: hidden; 
+            background-color: var(--dark-black); 
+            text-align: center;
+            padding: 20px 0 100px; 
+            margin-top: 60px;
+            z-index: 1; 
+            border-radius: 10px; 
+            /* Wendet das subtile Glühen auf den Footer an */
+            animation: subtle-glow 4s infinite alternate;
+        }
+
+        .footer-content {
+            /* Stellt sicher, dass der Text über dem Feuerbild liegt */
+            position: relative;
+            z-index: 10; 
+            padding: 0 10px;
+            background-color: var(--dark-black); 
+        }
+
+        .flame-footer {
+            /* Zeigt das Feuerbild am unteren Rand des Footers an */
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px; 
+            z-index: 5; 
+            /* Lädt das Bild und wiederholt es horizontal */
+            background-image: url('graf/flame.jpg'); 
+            background-repeat: repeat-x; 
+            background-size: auto 100px; 
+            background-position: bottom;
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>FEUERWEHR REILEIFZEN</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul class="main-menu">
+
+            <li class="reileifzen-btn">
+                <a href="#"><i class="fas fa-house"></i> Reileifzen</a>
+                <ul class="submenu">
+                    <li><a href="reileifzen-aktuelles.html">Aktuelles</a></li>
+                    <li><a href="reileifzen-dorf.html">Das Dorf</a></li>
+                    <li><a href="reileifzen-landschaft.html">Landschaft</a></li>
+                    <li><a href="reileifzen-gastgeber.html">Gastgeber</a></li>
+                    <li><a href="reileifzen-japan.html">Japan</a></li>
+                    <li><a href="reileifzen-kirschbluetenfest.html">Kirschbluetenfest</a></li>
+                    <li><a href="reileifzen-archiv.html">Archiv</a></li>
+                    <li><a href="reileifzen-vorstand.html">Vorstand</a></li>
+                    <li><a href="reileifzen-links.html">Links</a></li>
+                    <li><a href="reileifzen-impressum.html">Impressum</a></li>
+                    <li><a href="reileifzen-datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </li>
+
+            <li class="gaensetranke-btn">
+                <a href="#"><i class="fas fa-utensils"></i> Gänsetränke</a>
+                <ul class="submenu">
+                    <li><a href="gaensetranke-home.html">Home</a></li>
+                    <li><a href="gaensetranke-galerie.html">Galerie</a></li>
+                    <li><a href="gaensetranke-buchungen.html">Buchungen</a></li>
+                    <li><a href="gaensetranke-kontakt.html">Kontakt</a></li>
+                    <li><a href="gaensetranke-vorstand.html">Vorstand</a></li>
+                    <li><a href="gaensetranke-info.html">Info</a></li>
+                </ul>
+            </li>
+            
+            <li class="feuerwehr-btn">
+                <a href="#"><i class="fas fa-fire"></i> Feuerwehr</a>
+                <ul class="submenu">
+                    <li><a href="feuerwehr.html">Startseite</a></li>
+                    <li><a href="feuerwehr-kommando.html">Kommando</a></li>
+                    <li><a href="feuerwehr-wettkaempfe.html">Wettkämpfe</a></li>
+                    <li><a href="feuerwehr-fahrzeug.html">Fahrzeug und Technik</a></li>
+                    <li><a href="feuerwehr-dienstplan.html">Dienstplan</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        <section class="intro">
+            <h2 class="section-title">Im Dienst der Sicherheit.</h2>
+            <p>
+                Die Freiwillige Feuerwehr Reileifzen ist Ihre lokale Stütze in Notlagen.
+                Mit viel Engagement und einer gut aufgestellten Gruppe stehen wir Tag und Nacht für Ihre Sicherheit bereit.
+            </p>
+            <img src="graf/Feuerwehr/Fahrzeug.jpg" 
+                 alt="Feuerwehr im Einsatz" 
+                 class="image-responsive" 
+                 style="width: 70%; display: block; margin: 20px auto;">
+        </section>
+
+        <section class="info-box">
+            <h2 class="section-title" style="margin-top: 0; border-bottom: none;">Wir suchen Verstärkung!</h2>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <p><h3>Werden Sie Teil unseres Teams und leisten Sie einen wertvollen Beitrag für Ihre Gemeinschaft.<br>
+                    Egal ob aktive Feuerwehr, Jugendfeuerwehr oder passive Mitgliedschaft.<br>
+                    Jede Hilfe zählt.</h3></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        
+        <div class="footer-content">
+            <p>Feuerwehr Reileifzen | Notruf: 112 | Kontakt: feuerwehr@reileifzen.de</p>
+            <p>© 2026 | Impressum | Datenschutz</p>
+        </div>
+
+        <div class="flame-footer"></div>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<div class="cms-page">
+    <style>
+        .gaense-headline {
+            font-weight: bold;
+            color: #0066cc;
+            font-size: 3em;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 40px 0 20px;
+            text-align: center;
+            text-shadow: 2px 2px 4px #333;
+        }
+
+        .gaense-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+            max-width: 1000px;
+            margin: 20px auto;
+            align-items: center;
+        }
+
+        .gaense-item {
+            text-align: center;
+        }
+
+        .gaense-item img {
+            width: 100%;
+            height: auto;
+            max-width: 300px; /* Approximate size from original */
+            display: block;
+            margin: 0 auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            border: 1px solid #ccc;
+        }
+
+        .gaense-contact {
+            text-align: center;
+            font-size: 1em;
+            line-height: 1.5;
+            padding: 10px;
+        }
+
+        .gaense-footer {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        .gaense-footer p {
+            margin: 10px 0;
+        }
+
+        @media (max-width: 768px) {
+            .gaense-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+
+    <h1 class="gaense-headline">Gänsetränke Reileifzen</h1>
+
+    <div class="gaense-grid">
+        <!-- Row 1 -->
+        <div class="gaense-item">
+            <img src="verkehrsverein/images/gaensetraenke_G4.jpg" alt="Gänsetränke Bild 4">
+        </div>
+        <div class="gaense-item">
+            <img src="verkehrsverein/images/gaensetraenke_G2.jpg" alt="Gänsetränke Bild 2">
+        </div>
+        <div class="gaense-item">
+            <img src="verkehrsverein/images/gaensetraenke_G3.jpg" alt="Gänsetränke Bild 3">
+        </div>
+
+        <!-- Row 2 -->
+        <div class="gaense-item">
+            <img src="verkehrsverein/images/gaensetraenke_G1.jpg" alt="Gänsetränke Bild 1">
+        </div>
+        <div class="gaense-item gaense-contact">
+            <div>
+                <strong>Ansprechpartner:</strong><br><br>
+                Friedrich Hoffmeister<br>
+                oder<br>
+                Thorben Grühn<br><br>
+                <a href="mailto:gaensetraenke@reileifzen.de" style="color: #004080;">gaensetraenke@reileifzen.de</a>
+            </div>
+        </div>
+        <div class="gaense-item">
+            <img src="verkehrsverein/images/gaensetraenke_G5.jpg" alt="Gänsetränke Bild 5">
+        </div>
+    </div>
+
+    <div class="gaense-footer">
+        <p>Für etwa 80 Personen mieten Sie ein gemütliches und schönes Stück Reileifzen!</p>
+        <p>Bitte lesen Sie sich <a href="verkehrsverein/doc/Nutzungsvereinbarung.pdf" target="_blank" style="color:#cc0000; text-decoration:underline;">hier</a> in unsere Nutzungsbedingungen ein!</p>
+    </div>
+
+    <div class="nav-buttons" style="margin-top:50px;">
+        <a href="#" class="back-btn" onclick="history.back(); return false;">
+            zurück
+        </a>
+    </div>
+
+</div>

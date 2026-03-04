@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gänsetränke Reileifzen</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght~700&display=swap" rel="stylesheet"> 
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* ---------------------------------------------------------------------- */
+        /* --- GRUNDEINSTELLUNGEN & VARIABLEN (CSS CUSTOM PROPERTIES) --- */
+        /* ---------------------------------------------------------------------- */
+        :root {
+            /* Definition der Hauptfarben für Feuerwehr, Reileifzen und Gänsetränke */
+            --fire-red: #ff3b3f; 
+            --reileifzen-yellow: #ffc400; 
+            --gaensetranke-blue: #0056b3; /* Haupt-Akzentfarbe für diese Seite */
+            
+            /* Dunkle Hintergründe */
+            --dark-black: #000000; 
+            --box-bg-dark: #1e1e1e; 
+            --dropdown-bg: #2b2b2b; 
+            
+            /* Helle Schriftfarben und Leuchteffekte */
+            --light-grey: #e0e0e0;
+            --glow-blue: #0099ff; /* Blauer Leuchteffekt */
+            --blue-light: #0099ff;
+            --font-main: 'Roboto', sans-serif;
+            /* Gedämpfte blaue Farbe für das Glühen des Titels */
+            --title-blue-glow: #87cefa; 
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- KEYFRAMES FÜR GLÜHEN (JETZT BLAU) --- */
+        /* ---------------------------------------------------------------------- */
+        
+        @keyframes blue-glow {
+            0% { text-shadow: 0 0 5px rgba(135, 206, 250, 0.5), 0 0 10px rgba(0, 86, 179, 0.4); }
+            50% { text-shadow: 0 0 10px var(--title-blue-glow), 0 0 20px rgba(0, 86, 179, 0.6); }
+            100% { text-shadow: 0 0 5px rgba(135, 206, 250, 0.5), 0 0 10px rgba(0, 86, 179, 0.4); }
+        }
+        
+        @keyframes subtle-glow {
+            0%, 100% { box-shadow: 0 0 10px 5px rgba(0, 86, 179, 0.4); } /* Primär Blau */
+            50% { box-shadow: 0 0 15px 7px rgba(0, 153, 255, 0.6); } /* Helleres Blau in der Mitte */
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- BODY STYLES (GESAMT-LAYOUT) --- */
+        /* ---------------------------------------------------------------------- */
+        body {
+            font-family: var(--font-main);
+            padding: 20px; 
+            margin: 0;
+            background-color: var(--dark-black); 
+            color: var(--light-grey);
+            line-height: 1.6;
+            border: none; 
+            position: relative;
+            border-radius: 15px; 
+            z-index: 1; 
+        }
+        
+        /* Äußerer Rahmen (NEU: BLAU für Gänsetränke) */
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            border: 5px solid var(--gaensetranke-blue); 
+            border-radius: 15px; 
+            transition: border-color 2s ease-in-out;
+            z-index: -1; 
+            box-sizing: border-box;
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- HEADER & TITEL --- */
+        /* ---------------------------------------------------------------------- */
+        .header {
+            background-color: var(--dark-black); 
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: none; 
+            position: relative; 
+            z-index: 100;
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em; 
+            font-weight: 700;
+            font-family: 'Orbitron', sans-serif; 
+            color: var(--light-grey);
+            animation: blue-glow 2s infinite alternate; /* NEU: Blauer Glow */
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- NAVIGATION (UNVERÄNDERT, da global) --- */
+        /* ---------------------------------------------------------------------- */
+        .navbar {
+            background-color: var(--dark-black);
+            padding: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1000; 
+            border-bottom: 3px solid var(--dark-black); 
+            border-radius: 0;
+            width: 95%;
+            max-width: 1100px;
+            margin: 0 auto; 
+        }
+
+        .main-menu {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0;
+            gap: 15px; 
+        }
+
+        .main-menu > li {
+            position: relative;
+            flex-grow: 1; 
+            text-align: center;
+            overflow: visible; 
+            border-radius: 0; 
+        }
+        
+        .main-menu > li > a {
+            display: block;
+            text-decoration: none;
+            font-weight: 700;
+            padding: 15px 10px;
+            transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+            border-right: none; 
+            color: #fff; 
+            border-radius: 0; 
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.8); 
+        }
+        
+        /* Hervorhebung der Gänsetränke-Seite im Menü */
+        .gaensetranke-btn > a {
+            background-color: var(--gaensetranke-blue);
+            color: var(--light-grey);
+            box-shadow: 0 0 10px var(--gaensetranke-blue); /* Leichter blauer Schatten für aktive Seite */
+        }
+        
+        .gaensetranke-btn > a:hover,
+        .gaensetranke-btn:focus-within > a {
+            background-color: #0078d4;
+        }
+        
+        /* --- Andere Nav-Buttons (unverändert) --- */
+        .reileifzen-btn > a {
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black);
+            box-shadow: inset 0 0 25px rgba(0, 0, 0, 0.4); 
+        }
+        .reileifzen-btn > a:hover,
+        .reileifzen-btn:focus-within > a {
+            background-color: #ffda66;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); 
+        }
+        
+        .feuerwehr-btn > a {
+            background-color: var(--fire-red);
+            color: var(--light-grey);
+        }
+
+        .submenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%; 
+            background-color: var(--dropdown-bg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+            text-align: center; 
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+        
+        .main-menu > li:hover > .submenu,
+        .main-menu > li:focus-within > .submenu {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .submenu li a {
+            display: block;
+            padding: 10px 15px;
+            color: var(--light-grey);
+            border-bottom: 1px solid #3a3a3a;
+            text-align: center; 
+            text-decoration: none;
+        }
+        
+        .reileifzen-btn .submenu li a:hover { 
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black); 
+        }
+        .gaensetranke-btn .submenu li a:hover { background-color: var(--gaensetranke-blue); }
+        .feuerwehr-btn .submenu li a:hover { background-color: var(--fire-red); }
+
+        /* Mobile Navigations-Anpassungen (unverändert) */
+        @media (max-width: 768px) {
+            .navbar { margin: 0; width: 100%; border-radius: 0; }
+            .main-menu { flex-direction: column; gap: 5px; }
+            .main-menu > li { width: 100%; }
+            .submenu { position: static; max-height: 0; overflow: hidden; width: 100%; }
+            .main-menu > li:hover > .submenu,
+            .main-menu > li:focus-within > .submenu { max-height: 500px; transition: max-height 0.5s ease-in-out; }
+            /* Mobile Größen für Überschriften */
+            .header h1 { font-size: 1.6em; } 
+            .page-headline { font-size: 1.8em; } 
+            .section-title { font-size: 1.4em; } 
+        }
+
+        /* ---------------------------------------------------------------------- */
+        /* --- HAUPTINHALT & INFOBEREICHE (ANGEPASST AUF BLAU) --- */
+        /* ---------------------------------------------------------------------- */
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 30px auto; 
+        }
+        
+        .page-headline {
+            color: var(--gaensetranke-blue); /* NEU: Haupt-Headline ist Blau */
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 2.5em; 
+            text-align: center;
+            padding-bottom: 15px;
+            margin-top: 0;
+            border-bottom: 3px solid var(--gaensetranke-blue); /* NEU: Blaue Unterstreichung */
+            text-shadow: 0 0 5px rgba(0, 86, 179, 0.3);
+        }
+
+        .section-title {
+            color: var(--reileifzen-yellow); /* NEU: Unter-Headline ist Gelb */
+            font-weight: 700;
+            font-size: 1.8em; 
+            margin-top: 20px;
+            margin-bottom: 15px;
+            padding-bottom: 5px;
+            border-bottom: 2px solid var(--reileifzen-yellow); /* NEU: Gelbe Unterstreichung */
+        }
+        
+        /* Ausnahme: Überschrift der Reservierungsbox soll keine Unterstreichung haben */
+        .info-box .section-title[style="border-bottom: none; margin-top: 0;"] {
+            border-bottom: none !important;
+        }
+
+        .info-box {
+            background-color: var(--box-bg-dark);
+            padding: 25px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            border: 2px solid var(--gaensetranke-blue); /* NEU: Rahmen der Box ist Blau */
+        }
+
+        .highlight-event {
+            color: var(--reileifzen-yellow) !important; /* Hervorhebungen in Gelb */
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        /* NEUE STYLES FÜR BUCHUNGS-LINK: Angepasst an Dark-Mode/Blau */
+        .buchung-link {
+            display: inline-block;
+            background-color: var(--box-bg-dark); 
+            color: var(--gaensetranke-blue); /* Blaue Schrift */
+            padding: 15px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            border: 2px solid var(--gaensetranke-blue); /* Blauer Rand */
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 0 5px rgba(0, 86, 179, 0.4); /* Subtiler Blauer Glow */
+        }
+        
+        .buchung-link:hover {
+            background-color: #333333; 
+            color: var(--glow-blue); 
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 153, 255, 0.8); /* Starker Blauer Glow beim Hover */
+        }
+
+        /* BILD-STYLES: Responsiv und Zentriert (unverändert) */
+        .info-box img {
+            max-width: 100%; 
+            max-height: 600px;
+            height: auto;
+            display: block;
+            margin: 20px auto; 
+            border-radius: 6px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+        }
+        
+        .disclaimer-box {
+             background-color: var(--dark-black);
+             border: 2px solid var(--gaensetranke-blue); /* NEU: Blau */
+             padding: 20px;
+             border-radius: 8px;
+             margin-top: 30px;
+             text-align: left;
+        }
+        
+        .disclaimer-box a {
+            color: var(--gaensetranke-blue); /* NEU: Blau */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        
+        .disclaimer-box a:hover {
+            color: var(--glow-blue); /* NEU: Heller Blau */
+            text-decoration: underline;
+        }
+        
+        /* ---------------------------------------------------------------------- */
+        /* --- FOOTER --- */
+        /* ---------------------------------------------------------------------- */
+
+        .footer {
+            position: relative; 
+            overflow: hidden; 
+            background-color: var(--dark-black); 
+            text-align: center;
+            padding: 40px 0 40px; 
+            margin-top: 60px;
+            z-index: 1; 
+            border-radius: 10px; 
+            animation: subtle-glow 4s infinite alternate; /* Glow ist jetzt blau dominiert */
+        }
+
+        .footer-content {
+            position: relative;
+            z-index: 10; 
+            padding: 0 10px;
+            background-color: var(--dark-black); 
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>GÄNSETRÄNKE REILEIFZEN</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul class="main-menu">
+            <li class="reileifzen-btn">
+                <a href="#"><i class="fas fa-house"></i> Reileifzen</a>
+                <ul class="submenu">
+                    <li><a href="reileifzen-aktuelles.html">Aktuelles</a></li>
+                    <li><a href="reileifzen-dorf.html">Das Dorf</a></li>
+                    <li><a href="reileifzen-landschaft.html">Landschaft</a></li>
+                    <li><a href="reileifzen-gastgeber.html">Gastgeber</a></li>
+                    <li><a href="reileifzen-japan.html">Japan</a></li>
+                    <li><a href="reileifzen-kirschbluetenfest.html">Kirschbluetenfest</a></li>
+                    <li><a href="reileifzen-archiv.html">Archiv</a></li>
+                    <li><a href="reileifzen-vorstand.html">Vorstand</a></li>
+                    <li><a href="reileifzen-links.html">Links</a></li>
+                    <li><a href="reileifzen-impressum.html">Impressum</a></li>
+                    <li><a href="reileifzen-datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </li>
+
+            <li class="gaensetranke-btn">
+                <a href="#"><i class="fas fa-utensils"></i> Gänsetränke</a>
+                <ul class="submenu">
+                    <li><a href="gaensetranke-home.html">Home</a></li>
+                    <li><a href="gaensetranke-galerie.html">Galerie</a></li>
+                    <li><a href="gaensetranke-buchungen.html">Buchungen</a></li>
+                    <li><a href="gaensetranke-kontakt.html">Kontakt</a></li>
+                    <li><a href="gaensetranke-vorstand.html">Vorstand</a></li>
+                    <li><a href="gaensetranke-info.html">Info</a></li>
+                </ul>
+            </li>
+            
+            <li class="feuerwehr-btn">
+                <a href="#"><i class="fas fa-fire"></i> Feuerwehr</a>
+                <ul class="submenu">
+                    <li><a href="feuerwehr.html">Startseite</a></li>
+                    <li><a href="feuerwehr-kommando.html">Kommando</a></li>
+                    <li><a href="feuerwehr-wettkaempfe.html">Wettkämpfe</a></li>
+                    <li><a href="feuerwehr-fahrzeug.html">Fahrzeug und Technik</a></li>
+                    <li><a href="feuerwehr-dienstplan.html">Dienstplan</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <h2 class="page-headline">Willkommen in der Gänsetränke</h2>
+
+        <div class="info-box">
+            <h3 class="section-title"><i class="fas fa-info-circle"></i> Ihr Treffpunkt in Reileifzen</h3>
+            
+            <p>
+                Die Gänsetränke ist das Herzstück des Dorflebens in Reileifzen und bietet den idealen Rahmen für Ihre Feierlichkeiten, 
+                Versammlungen und gesellige Abende. Als Dorfgemeinschaftshaus wird es vom Heimat- und Verkehrsverein gepflegt und betrieben.
+            </p>
+            <p>
+                Egal, ob Sie eine private Feier, eine Firmenveranstaltung oder ein Vereinstreffen planen – unsere Räumlichkeiten 
+                und die gemütliche Atmosphäre bieten für jeden Anlass das Richtige.
+            </p>
+            <img src="graf/Gaensetranke/Innenansicht.jpg" alt="Innenansicht der Gänsetränke">
+        </div>
+
+        <div class="info-box" style="text-align:center;">
+             <h3 class="section-title" style="border-bottom: none; margin-top: 0;">Möchten Sie buchen?</h3>
+            <a class="buchung-link" href="gaensetranke-buchungen.html">
+                <i class="fas fa-calendar-alt"></i> Jetzt Verfügbarkeit prüfen & buchen
+            </a>
+        </div>
+
+        
+        <h2 class="page-headline">Aktuelles und Wichtiges</h2>
+
+        <div class="info-box">
+            <h3 class="section-title">
+                <i class="fas fa-cocktail"></i> Die neue Theke ist da!
+            </h3>
+            <p>
+                Nach umfangreichen Umbauarbeiten ist unsere neue Thekenanlage endlich fertiggestellt! 
+                Sie bietet nicht nur mehr Platz und Effizienz für unsere Helfer, sondern wertet auch den gesamten Gastraum optisch auf. 
+                Schauen Sie bei der nächsten Veranstaltung vorbei und erleben Sie den Unterschied.
+            </p>
+            <p class="highlight-event">
+                Vielen Dank an alle fleißigen Helfer des ARV, die dieses Projekt ermöglicht haben.
+            </p>
+            <img src="graf/Gaensetranke/NeueTheke.jpg" alt="Bild der neuen Theke in der Gänsetränke">
+        </div>
+
+        <div class="info-box">
+            <h3 class="section-title">
+                <i class="fas fa-euro-sign"></i> Preise und Konditionen
+            </h3>
+            <p>
+                Aktuelle Informationen zu Mietpreisen, Nutzungsbedingungen und optionalen Services 
+                finden Sie auf unserer **Info-Seite**. Wir legen Wert auf Transparenz und faire Konditionen für unsere Dorfgemeinschaft.
+            </p>
+            <p style="text-align:center;">
+                <a class="buchung-link" href="gaensetranke-info.html" style="font-size: 0.9em; padding: 10px 20px;">
+                    <i class="fas fa-file-alt"></i> Zur Info-Seite
+                </a>
+            </p>
+        </div>
+        
+    </main>
+    <footer class="footer">
+        
+        <div class="footer-content">
+            <p>Gänsetränke Reileifzen | Reservierung: buchungen@reileifzen.de</p>
+            <p>© 2026 | Impressum | Datenschutz</p>
+        </div>
+    </footer>
+
+</body>
+</html>

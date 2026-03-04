@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiseiten-Navigation Reileifzen (Farbige Hover-Effekte)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        /* 🚨 --- FARBPALETTE & GRUNDEINSTELLUNGEN (DARK MODE) --- 🚨 */
+        :root {
+            --fire-red: #ff3b3f; /* Feuerwehr: Rot */
+            --reileifzen-yellow: #ffc400; /* Reileifzen: Gelb (Sanft) */
+            --gaensetranke-blue: #0056b3; /* Gänsetränke: Dunkelblau */
+            
+            --dark-black: #121212;
+            --light-grey: #e0e0e0;
+            --box-bg-dark: #1e1e1e;
+            --font-main: 'Roboto', sans-serif;
+            --glow-yellow: #ffc400; 
+            --glow-orange: #ff4500; 
+            --blue-light: #0099ff;
+            --dropdown-bg: #2b2b2b; 
+        }
+
+        /* --- BLINKLICHT KEYFRAMES (RAHMEN) REAKTIVIERT --- */
+        @keyframes border-blink {
+            0%, 100% { border-color: var(--fire-red); }
+            50% { border-color: var(--blue-light); }
+        }
+
+        body {
+            font-family: var(--font-main);
+            margin: 0;
+            padding: 20px;
+            background-color: var(--dark-black);
+            color: var(--light-grey);
+            line-height: 1.6;
+            
+            /* Rahmen ist ROT/BLAU und BLINKEND (5px) */
+            border: 5px solid var(--fire-red); 
+            border-radius: -20px; 
+            animation: border-blink 1s infinite alternate; 
+        }
+
+        /* --- FEUER-SCHRIFTZUG KEYFRAMES --- */
+        @keyframes fire-glow {
+            0% { text-shadow: 0 0 10px var(--glow-yellow), 0 0 20px var(--glow-orange); }
+            50% { text-shadow: 0 0 20px var(--glow-yellow), 0 0 40px var(--glow-orange); }
+            100% { text-shadow: 0 0 10px var(--glow-yellow), 0 0 20px var(--glow-orange); }
+        }
+
+        /* --- HEADER & TITEL --- */
+        .header {
+            background-color: var(--dark-black);
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 5px solid var(--dark-black); 
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 3em;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #fff;
+            animation: fire-glow 2s infinite alternate;
+        }
+
+        /* ================================================== */
+        /* --- NAVIGATIONSSYSTEM --- */
+        /* ================================================== */
+        .navbar {
+            background-color: var(--box-bg-dark);
+            padding: 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+            position: relative;
+            z-index: 1000;
+            border-bottom: 3px solid var(--dark-black); 
+        }
+
+        .main-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        .main-menu > li {
+            position: relative;
+            flex-grow: 1;
+            text-align: center;
+        }
+
+        /* Style der Haupt-Buttons (Basis) */
+        .main-menu > li > a {
+            display: block;
+            text-decoration: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            padding: 15px 10px;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 1.1em;
+            border-right: 1px solid var(--dropdown-bg);
+            color: #fff; 
+        }
+        
+        /* Wichtig für die Trennlinie am rechten Rand des letzten Elements */
+        .main-menu > li:last-child > a {
+             border-right: none;
+        }
+        
+        /* --- FARBKLASSEN FÜR DIE BUTTONS --- */
+
+        /* Reileifzen: Gelb */
+        .reileifzen-btn > a {
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black);
+        }
+        .reileifzen-btn > a:hover,
+        .reileifzen-btn:focus-within > a {
+            background-color: #ffda66;
+        }
+        
+        /* Feuerwehr: Rot */
+        .feuerwehr-btn > a {
+            background-color: var(--fire-red);
+            color: var(--light-grey);
+        }
+        .feuerwehr-btn > a:hover,
+        .feuerwehr-btn:focus-within > a {
+            background-color: #ff6e71;
+        }
+
+        /* Gänsetränke: Blau */
+        .gaensetranke-btn > a {
+            background-color: var(--gaensetranke-blue);
+            color: var(--light-grey);
+        }
+        .gaensetranke-btn > a:hover,
+        .gaensetranke-btn:focus-within > a {
+            background-color: #0076e7;
+        }
+        
+        /* Icons */
+        .main-menu > li > a i {
+            margin-right: 8px;
+            font-size: 1.2em;
+        }
+
+        /* --- UNTERMENÜ (DROPDOWN) --- */
+        .submenu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            min-width: 100%; 
+            background-color: var(--dropdown-bg);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.8);
+            text-align: center; 
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s, visibility 0.3s;
+        }
+
+        .main-menu > li:hover > .submenu,
+        .main-menu > li:focus-within > .submenu {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .submenu li a {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: var(--light-grey);
+            white-space: nowrap;
+            transition: background-color 0.2s, color 0.2s;
+            border-bottom: 1px solid #3a3a3a;
+        }
+
+        /* ------------------------------------------- */
+        /* --- KATEGORISIERTE DROPDOWN HOVER FARBEN ---*/
+        /* ------------------------------------------- */
+        
+        /* 1. Feuerwehr Hover (Rot) */
+        .feuerwehr-btn .submenu li a:hover {
+            background-color: var(--fire-red);
+            color: var(--light-grey); 
+        }
+        
+        /* 2. Reileifzen Hover (Gelb) */
+        .reileifzen-btn .submenu li a:hover {
+            background-color: var(--reileifzen-yellow);
+            color: var(--dark-black); 
+        }
+        
+        /* 3. Gänsetränke Hover (Blau) */
+        .gaensetranke-btn .submenu li a:hover {
+            background-color: var(--gaensetranke-blue);
+            color: var(--light-grey); 
+        }
+
+        /* === MOBILE ANPASSUNG FÜR NAVIGATION === */
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+            
+            .main-menu { flex-direction: column; }
+
+            .main-menu > li {
+                width: 100%;
+                /* Vertikale Trennlinie auf Mobil wird SCHWARZ */
+                border-bottom: 1px solid var(--dark-black); 
+            }
+
+            .main-menu > li > a { border-right: none; }
+
+            /* Dropdown auf Mobil */
+            .submenu {
+                position: static;
+                min-width: 100%;
+                /* Trennstrich am Beginn des Dropdowns wird SCHWARZ */
+                border-top: 2px solid var(--dark-black);
+                box-shadow: none;
+                
+                max-height: 0;
+                overflow: hidden;
+            }
+            
+            .main-menu > li:hover > .submenu,
+            .main-menu > li:focus-within > .submenu {
+                max-height: 500px;
+                transition: max-height 0.5s ease-in-out;
+            }
+            
+            .submenu li a { padding-left: 0; }
+        }
+        /* --- RESTLICHER CODE UNVERÄNDERT --- */
+
+        .container {
+            width: 95%;
+            max-width: 1100px;
+            margin: 30px auto;
+        }
+
+        .section-title {
+            color: var(--light-grey); 
+            font-weight: 700;
+            font-size: 2.2em;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            border-bottom: 3px solid var(--fire-red);
+            padding-bottom: 5px;
+        }
+
+        .flex-container {
+            display: flex;
+            gap: 20px;
+            text-align: left;
+        }
+
+        .flex-item {
+            flex: 1;
+        }
+
+        .info-box {
+            background-color: var(--box-bg-dark);
+            padding: 25px;
+            margin: 30px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+        }
+
+        .info-box h3 {
+            color: var(--fire-red);
+            font-weight: 700;
+            font-size: 1.4em;
+        }
+        
+        .image-responsive {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+
+        .footer {
+            background-color: var(--dark-black);
+            color: var(--light-grey);
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 60px;
+            font-size: 0.9em;
+            border-top: 5px solid var(--fire-red);
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2em; }
+
+            .section-title { font-size: 1.8em; }
+
+            .flex-container { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <h1>FEUERWEHR REILEIFZEN</h1>
+    </header>
+
+    <nav class="navbar">
+        <ul class="main-menu">
+
+            <li class="feuerwehr-btn">
+                <a href="#"><i class="fas fa-fire"></i> Feuerwehr</a>
+                <ul class="submenu">
+                    <li><a href="feuerwehr.html">Startseite</a></li>
+                    <li><a href="feuerwehr-kommando.html">Kommando</a></li>
+                    <li><a href="feuerwehr-wettkaempfe.html">Wettkämpfe</a></li>
+                    <li><a href="feuerwehr-fahrzeug.html">Fahrzeug und Technik</a></li>
+                    <li><a href="feuerwehr-dienstplan.html">Dienstplan</a></li>
+                </ul>
+            </li>
+
+            <li class="reileifzen-btn">
+                <a href="#"><i class="fas fa-house"></i> Reileifzen</a>
+                <ul class="submenu">
+                    <li><a href="reileifzen-aktuelles.html">Aktuelles</a></li>
+                    <li><a href="reileifzen-dorf.html">Das Dorf</a></li>
+                    <li><a href="reileifzen-landschaft.html">Landschaft</a></li>
+                    <li><a href="reileifzen-gastgeber.html">Gastgeber</a></li>
+                    <li><a href="reileifzen-japan.html">Japan</a></li>
+                    <li><a href="reileifzen-kirschbluetenfest.html">Kirschblütenfest</a></li>
+                    <li><a href="reileifzen-archiv.html">Archiv</a></li>
+                    <li><a href="reileifzen-vorstand.html">Vorstand</a></li>
+                    <li><a href="reileifzen-links.html">Links</a></li>
+                    <li><a href="reileifzen-impressum.html">Impressum</a></li>
+                    <li><a href="reileifzen-datenschutz.html">Datenschutz</a></li>
+                </ul>
+            </li>
+
+            <li class="gaensetranke-btn">
+                <a href="#"><i class="fas fa-utensils"></i> Gänsetränke</a>
+                <ul class="submenu">
+                    <li><a href="gaensetranke-home.html">Home</a></li>
+                    <li><a href="gaensetranke-galerie.html">Galerie</a></li>
+                    <li><a href="gaensetranke-buchungen.html">Buchungen</a></li>
+                    <li><a href="gaensetranke-kontakt.html">Kontakt</a></li>
+                    <li><a href="gaensetranke-vorstand.html">Vorstand</a></li>
+                    <li><a href="gaensetranke-info.html">Info</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main class="container">
+        
+        <section class="intro">
+            <h2 class="section-title">Das Ortskommando</h2>
+            
+<div class="Section">
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Marco.jpg" class="center">
+        <div class="contact-text">
+            <strong>Marco Eikhoff</strong><br>
+            Ortsbrandmeister
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Dirk.jpg" class="center">
+        <div class="contact-text">
+            <strong>Dirk Schünemann</strong><br>
+            stellv. Ortsbrandmeister & Sicherheitsbeautragter
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Jasmin.jpg" class="center">
+        <div class="contact-text">
+            <strong>Jasmin Bergmeier</strong><br>
+            Gruppenführerin
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Domenik.jpg" class="center">
+        <div class="contact-text">
+            <strong>Domenik Schünemann</strong><br>
+            stellv. Gruppenführer
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Tobias.jpg" class="center">
+        <div class="contact-text">
+            <strong>Tobias Hoffmeister</strong><br>
+            Gerätewart
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Melanie.jpg" class="center">
+        <div class="contact-text">
+            <strong>Melanie Grühn</strong><br>
+            Schriftführerin
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Carola.jpg" class="center">
+        <div class="contact-text">
+            <strong>Carola Tacke</strong><br>
+            Kassenwartin
+        </div>
+    </div>
+    
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Ralf.jpg" class="center">
+        <div class="contact-text">
+            <strong>Ralf Bergmeier</strong><br>
+            Atemschutzbeauftragter
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-bottom: 100px;">
+        <img src="graf/Feuerwehr/Kommando/Tina.jpg" class="center">
+        <div class="contact-text">
+            <strong>Tina Bergmeier</strong><br>
+            Frauensprecherin
+        </div>
+    </div>
+    
+</div>
+        
+        <section class="info-box">
+            <h2 class="section-title" style="margin-top: 0; border-bottom: none;">Wir suchen Verstärkung!</h2>
+            <div class="flex-container">
+                <div class="flex-item">
+                    <p><h3>Werden Sie Teil unseres Teams und leisten Sie einen wertvollen Beitrag für Ihre Gemeinschaft.<br>
+                    Egal ob aktive Feuerwehr, Jugendfeuerwehr oder passive Mitgliedschaft.<br>
+                    Jede Hilfe zählt.</h3></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>Feuerwehr Reileifzen | Notruf: 112 | Kontakt: feuerwehr@reileifzen.de</p>
+        <p>© 2026 | Impressum | Datenschutz</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,237 @@
+<div class="cms-page">
+    <h1>Kirschblütenfest in Reileifzen</h1>
+    
+<div class="sakura-container">
+    <style>
+        .sakura-container {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            max-width: 800px;
+            margin: 10px auto;
+            background: #ffffff;
+            color: #333;
+            border: 1px solid #fce4ec;
+            border-radius: 8px;
+            overflow: hidden;
+            line-height: 1.5;
+            /* Aktiviert Silbentrennung gegen Abschneiden am Rand */
+            hyphens: auto;
+            -webkit-hyphens: auto;
+            word-wrap: break-word;
+        }
+
+        .sakura-header {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd0 100%);
+            padding: 25px 15px;
+            text-align: center;
+        }
+
+        .sakura-header h1 {
+            margin: 0;
+            color: #880e4f;
+            /* Dynamische Schriftgröße: Schrumpft auf kleinen Displays */
+            font-size: clamp(1.3rem, 6vw, 2.2rem);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.2;
+        }
+
+        .sakura-header p {
+            margin: 10px 0 0;
+            color: #ad1457;
+            font-weight: bold;
+            font-size: clamp(0.9rem, 4vw, 1.1rem);
+        }
+
+        .sakura-body {
+            padding: 20px 15px;
+        }
+
+        .intro-text {
+            font-style: italic;
+            margin-bottom: 25px;
+            color: #555;
+            border-bottom: 1px solid #f8bbd0;
+            padding-bottom: 15px;
+        }
+
+        .event-section {
+            margin-bottom: 25px;
+        }
+
+        .event-section h2 {
+            font-size: 1.3em;
+            color: #880e4f;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .event-section h2::after {
+            content: "";
+            flex: 1;
+            height: 2px;
+            background: #fce4ec;
+            margin-left: 10px;
+        }
+
+        .program-item {
+            display: flex;
+            margin-bottom: 15px;
+            gap: 10px;
+        }
+
+        .program-time {
+            min-width: 75px;
+            font-weight: bold;
+            color: #ad1457;
+            font-size: 0.95em;
+        }
+
+        .program-desc strong {
+            display: block;
+            color: #d81b60;
+            margin-bottom: 3px;
+        }
+
+        .highlight-card {
+            background: #fffafb;
+            border: 1px solid #f8bbd0;
+            border-radius: 6px;
+            padding: 15px;
+        }
+
+        .culinary-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 10px;
+            list-style: none;
+            padding: 0;
+        }
+
+        .culinary-grid li {
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .culinary-grid li::before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
+            font-size: 0.8em;
+        }
+
+        @media (max-width: 480px) {
+            .program-item {
+                flex-direction: column;
+                gap: 2px;
+                margin-bottom: 20px;
+            }
+            .program-time {
+                background: #fce4ec;
+                padding: 2px 8px;
+                border-radius: 4px;
+                display: inline-block;
+                width: fit-content;
+            }
+            .sakura-body {
+                padding: 15px 10px;
+            }
+        }
+    </style>
+
+    <div class="sakura-header">
+        <h3>Kirschblütenfest 2026</h3>
+        <p>Sonntag, 19. April | Rund um die Gänsetränke</p>
+    </div>
+
+    <div class="sakura-body">
+        <p class="intro-text">
+            Erleben Sie ein Fest der deutsch-japanischen Freundschaft mit blühenden Kirschbäumen. 
+            Wir freuen uns auf den Besuch des <strong>japanischen Generalkonsuls aus Hamburg</strong> 
+            sowie zahlreiche Vertreter der Politik.
+        </p>
+
+        <div class="event-section">
+            <h2>Programm-Highlights</h2>
+            
+            <div class="program-item">
+                <div class="program-time">12:00 Uhr</div>
+                <div class="desc">
+                    <strong>Eröffnung & Begrüßung</strong>
+                    Vorstellung der japanischen Kirschblütenprinzessinnen mit Grußworten des Generalkonsuls und der Ehrengäste. 
+                    Begleitet durch das Stahler Blasorchester (bis 15 Uhr).
+                </div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-time">12:30 Uhr</div>
+                <div class="desc">
+                    <strong>Baumpflanzung</strong>
+                    Traditionelles Pflanzen eines Kirschbaums mit unseren Ehrengästen.
+                </div>
+            </div>
+
+            <div class="program-item">
+                <div class="program-time">15:00 Uhr</div>
+                <div class="desc">
+                    <strong>Empfang & Live-Musik</strong>
+                    Begrüßung der Kirschblütenkönigin der Rühler Schweiz nebst Gastköniginnen, unterstrichen mmit Live-Musik von Sebastian Hegener.
+                </div>
+            </div>
+        </div>
+
+        <div class="event-section">
+            <h2>Kulinarik (ab 11:30)</h2>
+            <ul class="culinary-grid">
+                <li>Gegrilltes Hausschwein</li>
+                <li>Hausgemachte Hamburger</li>
+                <li>Kartoffelpuffer mit Apfelmus</li>
+                <li>Kirschkuchen & Torten</li>
+                <li>Bratwurst & Pommes</li>
+                <li>Kirschwein von Wesermost</li>
+            </ul>
+        </div>
+
+        <div class="event-section">
+            <div class="highlight-card">
+                <strong>Ganztägig: Mittelalter & Region</strong>
+                <p style="margin: 8px 0; font-size: 0.95em;">
+                    Mittelalterlager (11.-13. Jh.) mit dem WeserBogen Reileifzen e.V. – Handwerke wie Schmieden, Bogenschießen und Seilerei zum Ausprobieren. 
+                    Zudem: Oldtimer-Traktoren, regionale Marktstände und Kinderschminken.
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<hr>
+
+<h3>Kirschblütenfest 2025</h3>
+
+    <div style="text-align: center; margin-bottom: 30px;">
+        <img src="verkehrsverein/graf/Archiv/2025/Kirsch01.jpg" 
+             alt="Kirschblütenfest Impression" 
+             style="max-width: 600px; width: 100%;">
+    </div>
+
+    <p>
+        Das Kirschblütenfest war ein voller Erfolg. Bei bestem Wetter strömten die Besucher auf das Fest 
+        und genossen das Programm. Wir freuen uns schon auf das nächste Jahr, wenn wir wieder unsere 
+        japanischen Freunde in Reileifzen begrüßen dürfen.
+    </p>
+
+    <div class="image-gallery" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap;">
+        <img src="verkehrsverein/graf/Archiv/2025/Kirsch02.jpg" 
+             alt="Impression 2" 
+             style="max-width: 400px; width: 100%;">
+        <img src="verkehrsverein/graf/Archiv/2025/Kirsch03.jpg" 
+             alt="Impression 3" 
+             style="max-width: 400px; width: 100%;">
+    </div>
+
+    <div class="nav-buttons" style="margin-top:50px;">
+        <a href="#" class="back-btn" onclick="history.back(); return false;">
+            zurück
+        </a>
+    </div>
+</div>
