@@ -589,6 +589,23 @@ a:hover {
         max-width: 100%;
         box-sizing: border-box;
     }
+    .main-menu {
+        gap: 8px;
+        padding: 5px 10px;
+        flex-direction: column; /* Vertikale Anordnung */
+    }
+    .main-menu > li {
+        width: 100%;
+        text-align: center;
+        margin: 0;
+    }
+    .main-menu > li.has-submenu {
+        padding-bottom: 0px;
+    }
+    .main-menu > li > a {
+        padding: 4px 15px;
+        font-size: 0.8rem;
+    }
 }
 
 .main-crest img {
