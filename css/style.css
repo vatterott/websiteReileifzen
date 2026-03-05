@@ -563,26 +563,33 @@ a:hover {
         align-items: center;
         width: 100%;
         max-width: 100%;
-        overflow: visible; /* Ensure rotated corners aren't clipped */
+        overflow: visible; /* Muss visible sein, damit rotierte Bilder nicht abgeschnitten werden */
         gap: 16px;
-        padding-bottom: 50px; /* Increased extra space so rotated images aren't clipped at the bottom */
+        padding: 10px 15px 50px 15px; /* seitlicher Puffer für Rotationen */
+        box-sizing: border-box;
     }
     .main-crest img {
         height: auto;
-        width: min(50vw, 180px);
+        width: 100px; /* Noch kleiner */
+        max-width: 50vw; 
+        aspect-ratio: auto; /* Stellt sicher, dass das Bild nicht verzerrt */
+        object-fit: contain;
     }
     .side-images {
         flex-direction: row !important;
         justify-content: center;
         width: 100%;
         max-width: 100%;
-        gap: 5vw;
+        gap: 10px;
+        overflow: visible; /* visible damit rotierte Ecken sichtbar bleiben */
+        padding: 8px 0; /* vertikaler Puffer für rotierte Bild-Ecken */
     }
     .side-images img {
-        width: 30vw;
+        width: 85px; /* Noch extremer kleiner */
+        max-width: 30vw; /* Viel Sicherheitsabstand */
         height: auto;
-        aspect-ratio: 16 / 10;
-        max-width: 140px;
+        aspect-ratio: auto; 
+        object-fit: cover;
     }
     .welcome-text-box {
         padding: 30px 20px;
