@@ -24,15 +24,8 @@
             "NavItems": []
           },
           {
-            "Name": "Das Dorf",
+            "Name": "Dorf & Landschaft",
             "Path": "verkehrsverein/dorf.html",
-            "Icon": "fas fa-map-location-dot",
-            "cssFile": "",
-            "NavItems": []
-          },
-          {
-            "Name": "Landschaft",
-            "Path": "verkehrsverein/landschaft.html",
             "Icon": "fas fa-mountain",
             "cssFile": "",
             "NavItems": []
