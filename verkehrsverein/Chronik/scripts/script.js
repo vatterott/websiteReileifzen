@@ -129,28 +129,31 @@ function renderArticles(articlesToRender) {
 }
 
 function displayPagination(totalCount) {
-    const container = document.getElementById('pagination');
-    if (!container) return;
-
-    container.innerHTML = '';
-
     const totalPages = Math.ceil(totalCount / articlesPerPage);
+    const containers = [
+        document.getElementById('pagination'),
+        document.getElementById('pagination-bottom')
+    ].filter(Boolean);
 
-    if (totalPages > paginationSplitter && currentPage > lookAheadBehind) {
-        appendPaginationButton(container, 1);
-        appendPaginationThreeDots(container);
-    }
+    containers.forEach(function (container) {
+        container.innerHTML = '';
 
-    for (let i = 1; i <= totalPages; i++) {
-        if (totalPages <= paginationSplitter || (i - lookAheadBehind < currentPage && i + lookAheadBehind > currentPage)) {
-            appendPaginationButton(container, i);
+        if (totalPages > paginationSplitter && currentPage > lookAheadBehind) {
+            appendPaginationButton(container, 1);
+            appendPaginationThreeDots(container);
         }
-    }
 
-    if (totalPages > paginationSplitter && currentPage < totalPages - lookAheadBehind) {
-        appendPaginationThreeDots(container);
-        appendPaginationButton(container, totalPages);
-    }
+        for (let i = 1; i <= totalPages; i++) {
+            if (totalPages <= paginationSplitter || (i - lookAheadBehind < currentPage && i + lookAheadBehind > currentPage)) {
+                appendPaginationButton(container, i);
+            }
+        }
+
+        if (totalPages > paginationSplitter && currentPage < totalPages - lookAheadBehind) {
+            appendPaginationThreeDots(container);
+            appendPaginationButton(container, totalPages);
+        }
+    });
 }
 
 function appendPaginationButton(container, i) {

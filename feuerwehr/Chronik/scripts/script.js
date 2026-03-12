@@ -84,28 +84,31 @@ function feuerwehrRenderArticles(articlesToRender) {
 }
 
 function feuerwehrDisplayPagination(totalCount) {
-    const container = document.getElementById('pagination');
-    if (!container) return;
-
-    container.innerHTML = '';
-
     const totalPages = Math.ceil(totalCount / feuerwehrArticlesPerPage);
+    const containers = [
+        document.getElementById('pagination'),
+        document.getElementById('pagination-bottom')
+    ].filter(Boolean);
 
-    if (totalPages > feuerwehrPaginationSplitter && feuerwehrCurrentPage > feuerwehrLookAheadBehind) {
-        feuerwehrAppendPaginationButton(container, 1);
-        feuerwehrAppendPaginationThreeDots(container);
-    }
+    containers.forEach(function (container) {
+        container.innerHTML = '';
 
-    for (let i = 1; i <= totalPages; i++) {
-        if (totalPages <= feuerwehrPaginationSplitter || (i - feuerwehrLookAheadBehind < feuerwehrCurrentPage && i + feuerwehrLookAheadBehind > feuerwehrCurrentPage)) {
-            feuerwehrAppendPaginationButton(container, i);
+        if (totalPages > feuerwehrPaginationSplitter && feuerwehrCurrentPage > feuerwehrLookAheadBehind) {
+            feuerwehrAppendPaginationButton(container, 1);
+            feuerwehrAppendPaginationThreeDots(container);
         }
-    }
 
-    if (totalPages > feuerwehrPaginationSplitter && feuerwehrCurrentPage < totalPages - feuerwehrLookAheadBehind) {
-        feuerwehrAppendPaginationThreeDots(container);
-        feuerwehrAppendPaginationButton(container, totalPages);
-    }
+        for (let i = 1; i <= totalPages; i++) {
+            if (totalPages <= feuerwehrPaginationSplitter || (i - feuerwehrLookAheadBehind < feuerwehrCurrentPage && i + feuerwehrLookAheadBehind > feuerwehrCurrentPage)) {
+                feuerwehrAppendPaginationButton(container, i);
+            }
+        }
+
+        if (totalPages > feuerwehrPaginationSplitter && feuerwehrCurrentPage < totalPages - feuerwehrLookAheadBehind) {
+            feuerwehrAppendPaginationThreeDots(container);
+            feuerwehrAppendPaginationButton(container, totalPages);
+        }
+    });
 }
 
 function feuerwehrAppendPaginationButton(container, i) {

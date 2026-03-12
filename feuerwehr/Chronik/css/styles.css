@@ -86,8 +86,7 @@
 
 .chr_article img {
     width: 60px;
-    height: 80px;
-    object-fit: cover;
+    height: auto;
     border-radius: 5px;
     flex-shrink: 0;
 }
