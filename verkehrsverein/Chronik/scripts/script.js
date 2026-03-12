@@ -86,8 +86,15 @@ function renderArticles(articlesToRender) {
         const articleDiv = document.createElement('div');
         articleDiv.className = 'chr_article';
 
+        const docPath = toChronikPath(article.Document);
+
         const thumbnail = document.createElement('img');
         thumbnail.src = toChronikPath(article.Thumbnail);
+        thumbnail.className = 'chr_thumbnail';
+        thumbnail.title = 'Artikel öffnen';
+        if (docPath) {
+            thumbnail.addEventListener('click', function () { chrVvOpenPdf(docPath); });
+        }
         articleDiv.appendChild(thumbnail);
 
         const infoDiv = document.createElement('div');
@@ -106,8 +113,14 @@ function renderArticles(articlesToRender) {
         infoDiv.appendChild(summary);
 
         const link = document.createElement('a');
-        link.href = toChronikPath(article.Document);
+        link.href = '#';
         link.innerHTML = '... mehr lesen';
+        if (docPath) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                chrVvOpenPdf(docPath);
+            });
+        }
         infoDiv.appendChild(link);
 
         articleDiv.appendChild(infoDiv);
@@ -160,6 +173,57 @@ function appendPaginationThreeDots(container) {
     const span = document.createElement('span');
     span.innerText = '...';
     container.appendChild(span);
+}
+
+function chrVvEnsurePdfViewer() {
+    if (document.getElementById('chr_vv_pdf_overlay')) return;
+
+    const overlay = document.createElement('div');
+    overlay.id = 'chr_vv_pdf_overlay';
+    overlay.className = 'chr_pdf_overlay';
+
+    const pdfContainer = document.createElement('div');
+    pdfContainer.className = 'chr_pdf_container';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'chr_pdf_close';
+    closeBtn.id = 'chr_vv_pdf_close';
+    closeBtn.title = 'Schließen';
+    closeBtn.textContent = '\u2715';
+    closeBtn.addEventListener('click', chrVvClosePdf);
+
+    const frame = document.createElement('iframe');
+    frame.className = 'chr_pdf_frame';
+    frame.id = 'chr_vv_pdf_frame';
+    frame.src = 'about:blank';
+
+    pdfContainer.appendChild(closeBtn);
+    pdfContainer.appendChild(frame);
+    overlay.appendChild(pdfContainer);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) chrVvClosePdf(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') chrVvClosePdf(); });
+    document.addEventListener('content:loaded', chrVvClosePdf);
+}
+
+function chrVvOpenPdf(url) {
+    chrVvEnsurePdfViewer();
+    const frame = document.getElementById('chr_vv_pdf_frame');
+    const overlay = document.getElementById('chr_vv_pdf_overlay');
+    if (!frame || !overlay) return;
+    frame.src = url;
+    overlay.classList.add('chr_pdf_overlay--open');
+    document.body.style.overflow = 'hidden';
+}
+
+function chrVvClosePdf() {
+    const frame = document.getElementById('chr_vv_pdf_frame');
+    const overlay = document.getElementById('chr_vv_pdf_overlay');
+    if (!overlay || !overlay.classList.contains('chr_pdf_overlay--open')) return;
+    overlay.classList.remove('chr_pdf_overlay--open');
+    document.body.style.overflow = '';
+    if (frame) { setTimeout(function () { frame.src = 'about:blank'; }, 300); }
 }
 
 function runSearch() {

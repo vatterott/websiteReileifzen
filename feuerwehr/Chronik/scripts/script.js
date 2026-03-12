@@ -41,8 +41,15 @@ function feuerwehrRenderArticles(articlesToRender) {
         const articleDiv = document.createElement('div');
         articleDiv.className = 'chr_article';
 
+        const docPath = feuerwehrToChronikPath(article.Document);
+
         const thumbnail = document.createElement('img');
         thumbnail.src = feuerwehrToChronikPath(article.Thumbnail);
+        thumbnail.className = 'chr_thumbnail';
+        thumbnail.title = 'Artikel öffnen';
+        if (docPath) {
+            thumbnail.addEventListener('click', function () { feuerwehrOpenPdf(docPath); });
+        }
         articleDiv.appendChild(thumbnail);
 
         const infoDiv = document.createElement('div');
@@ -61,8 +68,14 @@ function feuerwehrRenderArticles(articlesToRender) {
         infoDiv.appendChild(summary);
 
         const link = document.createElement('a');
-        link.href = feuerwehrToChronikPath(article.Document);
+        link.href = '#';
         link.innerHTML = '... mehr lesen';
+        if (docPath) {
+            link.addEventListener('click', function (e) {
+                e.preventDefault();
+                feuerwehrOpenPdf(docPath);
+            });
+        }
         infoDiv.appendChild(link);
 
         articleDiv.appendChild(infoDiv);
@@ -115,6 +128,57 @@ function feuerwehrAppendPaginationThreeDots(container) {
     const span = document.createElement('span');
     span.innerText = '...';
     container.appendChild(span);
+}
+
+function feuerwehrEnsurePdfViewer() {
+    if (document.getElementById('chr_fw_pdf_overlay')) return;
+
+    const overlay = document.createElement('div');
+    overlay.id = 'chr_fw_pdf_overlay';
+    overlay.className = 'chr_pdf_overlay';
+
+    const pdfContainer = document.createElement('div');
+    pdfContainer.className = 'chr_pdf_container';
+
+    const closeBtn = document.createElement('button');
+    closeBtn.className = 'chr_pdf_close';
+    closeBtn.id = 'chr_fw_pdf_close';
+    closeBtn.title = 'Schließen';
+    closeBtn.textContent = '\u2715';
+    closeBtn.addEventListener('click', feuerwehrClosePdf);
+
+    const frame = document.createElement('iframe');
+    frame.className = 'chr_pdf_frame';
+    frame.id = 'chr_fw_pdf_frame';
+    frame.src = 'about:blank';
+
+    pdfContainer.appendChild(closeBtn);
+    pdfContainer.appendChild(frame);
+    overlay.appendChild(pdfContainer);
+    document.body.appendChild(overlay);
+
+    overlay.addEventListener('click', function (e) { if (e.target === overlay) feuerwehrClosePdf(); });
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') feuerwehrClosePdf(); });
+    document.addEventListener('content:loaded', feuerwehrClosePdf);
+}
+
+function feuerwehrOpenPdf(url) {
+    feuerwehrEnsurePdfViewer();
+    const frame = document.getElementById('chr_fw_pdf_frame');
+    const overlay = document.getElementById('chr_fw_pdf_overlay');
+    if (!frame || !overlay) return;
+    frame.src = url;
+    overlay.classList.add('chr_pdf_overlay--open');
+    document.body.style.overflow = 'hidden';
+}
+
+function feuerwehrClosePdf() {
+    const frame = document.getElementById('chr_fw_pdf_frame');
+    const overlay = document.getElementById('chr_fw_pdf_overlay');
+    if (!overlay || !overlay.classList.contains('chr_pdf_overlay--open')) return;
+    overlay.classList.remove('chr_pdf_overlay--open');
+    document.body.style.overflow = '';
+    if (frame) { setTimeout(function () { frame.src = 'about:blank'; }, 300); }
 }
 
 function feuerwehrRunSearch() {

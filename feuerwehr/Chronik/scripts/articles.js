@@ -786,7 +786,7 @@
   {
     "Title": "Scheune in Dölme brennt",
     "Date": "1994-10-25",
-    "Summary": "Noch ist unklar, warum gestern kurz nach Mitternacht eine Scheune im Alten Fahrweg in D param($m) "" lme in Flammen stand. Gelagert wurde hier vorrangig Brennholz. Als die Feuerwehr alarmiert wurde, griff das Feuer bereits auf den Schuppen eines Nachbarhauses über.",
+    "Summary": "Noch ist unklar, warum gestern kurz nach Mitternacht eine Scheune im Alten Fahrweg in Dölme in Flammen stand. Gelagert wurde hier vorrangig Brennholz. Als die Feuerwehr alarmiert wurde, griff das Feuer bereits auf den Schuppen eines Nachbarhauses über.",
     "Document": "./docs/1994-10-25 Scheune in Dölme brennt.pdf",
     "Thumbnail": "./thumbs/1994-10-25 Scheune in Dölme brennt_thumb.jpg"
   },
@@ -826,9 +826,9 @@
     "Thumbnail": "./thumbs/1995-05-03 volle Beachtung_thumb.jpg"
   },
   {
-    "Title": "Feuerwehrfest D param($m) "" lme",
+    "Title": "Feuerwehrfest Dölme",
     "Date": "1995-06-02",
-    "Summary": "Wenn die Freiwillige Feuerwehr D param($m) "" lme alle fünf Jahre ein dreitägiges großes Gemeinschaftsfest feiert, dann kann sie sicher sein, dass viele Gäste von nah und fern den Weg in die kleine Wesergemeinde finden. Das war auch jetzt wieder der Fall. Der Erfolg und Ablauf der 'drei tollen D param($m) "" lmer Tage' wurden von vielen Gästen positiv bewertet.",
+    "Summary": "Wenn die Freiwillige Feuerwehr Dölme alle fünf Jahre ein dreitägiges großes Gemeinschaftsfest feiert, dann kann sie sicher sein, dass viele Gäste von nah und fern den Weg in die kleine Wesergemeinde finden. Das war auch jetzt wieder der Fall. Der Erfolg und Ablauf der 'drei tollen Dölmer Tage' wurden von vielen Gästen positiv bewertet.",
     "Document": "./docs/1995-06-02 Feuerwehrfest Dölme.pdf",
     "Thumbnail": "./thumbs/1995-06-02 Feuerwehrfest Dölme_thumb.jpg"
   },
@@ -884,7 +884,7 @@
   {
     "Title": "Feuerwehr wandert zur Adventsfeier",
     "Date": "1996-12-01",
-    "Summary": "Für Sonntag, 1. Dezember, hat die Feuerwehr Reileifzen zu einer Adventsfeier nach D param($m) "" lme eingeladen. Die Teilnehmer treffen sich um 13.30 Uhr am Hause Eikhoff. Im früheren Gasthaus Balke im Beveraner Ortsteil D param($m) "" lme verspricht Gastwirt Hein bei Kaffee und Kuchen einen gemütlichen Familiennachmittag.",
+    "Summary": "Für Sonntag, 1. Dezember, hat die Feuerwehr Reileifzen zu einer Adventsfeier nach Dölme eingeladen. Die Teilnehmer treffen sich um 13.30 Uhr am Hause Eikhoff. Im früheren Gasthaus Balke im Beveraner Ortsteil Dölme verspricht Gastwirt Hein bei Kaffee und Kuchen einen gemütlichen Familiennachmittag.",
     "Document": "./docs/1996-12-01 Adventsfeier.pdf",
     "Thumbnail": "./thumbs/1996-12-01 Adventsfeier_thumb.jpg"
   },
@@ -996,7 +996,7 @@
   {
     "Title": "Holenbergs Wehr richtete Pokalwettbewerb aus",
     "Date": "1998-06-04",
-    "Summary": "Die Wehr des Voglerdorfes hat zu einem Pokalwettbewerb geladen, dem 23 Wehren aus dem Kreisgebiet sowie aus Stahle und H param($m) "" xter gefolgt waren. Die Ortswehr Reileifzen sicherte sich mit einer herausragenden Leistung den ersten Platz.",
+    "Summary": "Die Wehr des Voglerdorfes hat zu einem Pokalwettbewerb geladen, dem 23 Wehren aus dem Kreisgebiet sowie aus Stahle und Höxter gefolgt waren. Die Ortswehr Reileifzen sicherte sich mit einer herausragenden Leistung den ersten Platz.",
     "Document": "./docs/1998-06-04 Wettkämpfe Holenberg.pdf",
     "Thumbnail": "./thumbs/1998-06-04 Wettkämpfe Holenberg_thumb.jpg"
   },
@@ -1178,7 +1178,7 @@
   {
     "Title": "Griinkohlwanderung 2000",
     "Date": "2000-01-16",
-    "Summary": "Auch in diesem Jahre ist unsere Einladung zur Griinkohiwanderung am 16. Januar wieder auf ein positives Echo gestoBen. Nur das Wetter hatte besser sein k param($m) "" nnen, in der letzten Nacht hatte es ein wenig geschneit. Hier um Reileifzen ist der Schnee allerdings schon wieder getaut.",
+    "Summary": "Auch in diesem Jahre ist unsere Einladung zur Griinkohiwanderung am 16. Januar wieder auf ein positives Echo gestoBen. Nur das Wetter hatte besser sein können, in der letzten Nacht hatte es ein wenig geschneit. Hier um Reileifzen ist der Schnee allerdings schon wieder getaut.",
     "Document": "./docs/2000-01-16 Grünkohlwanderung .pdf",
     "Thumbnail": "./thumbs/2000-01-16 Grünkohlwanderung _thumb.jpg"
   },
@@ -1234,14 +1234,14 @@
   {
     "Title": "Nachwiuchs fiir die Ortswehr",
     "Date": "2000-08-28",
-    "Summary": "Fir Ortsbrandmeister Fischer war dies ein besonderer H param($m) "" he- punkt zum Geburtstag, denn der Pokal fiir die jungen Feuerwehr- leute aus einem Ort bestarkte die Liittgenader Wehr, in diesem Jahr die Jugendfeuerwehr offi- ziell ins Leben zu rufen. In ei- nem: Riickblick lieS Fischer die Geschichte der Wehr Revue passieren.",
+    "Summary": "Fir Ortsbrandmeister Fischer war dies ein besonderer Höhe- punkt zum Geburtstag, denn der Pokal fiir die jungen Feuerwehr- leute aus einem Ort bestarkte die Liittgenader Wehr, in diesem Jahr die Jugendfeuerwehr offi- ziell ins Leben zu rufen. In ei- nem: Riickblick lieS Fischer die Geschichte der Wehr Revue passieren.",
     "Document": "./docs/2000-08-28 Wettkämpfe Lütgenade .pdf",
     "Thumbnail": "./thumbs/2000-08-28 Wettkämpfe Lütgenade _thumb.jpg"
   },
   {
     "Title": "Adventsfeier der Feuerwehr Reileifzen",
     "Date": "2000-12-09",
-    "Summary": "Die Adventsfeier der Feuerwehr in Reileifzen ist nicht nur fiir die Kameraden und ihre Angeh param($m) "" rigen ein be-sonderer Gana zum Jahresabschluss. Das ganze Dorf freut sich stets darauf, bei der Bescherung der. Kinder durch den Nikolaus dabei zu sein.",
+    "Summary": "Die Adventsfeier der Feuerwehr in Reileifzen ist nicht nur fiir die Kameraden und ihre Angehörigen ein be-sonderer Gana zum Jahresabschluss. Das ganze Dorf freut sich stets darauf, bei der Bescherung der. Kinder durch den Nikolaus dabei zu sein.",
     "Document": "./docs/2000-12-09 Adventsfeier .pdf",
     "Thumbnail": "./thumbs/2000-12-09 Adventsfeier _thumb.jpg"
   },
@@ -1283,7 +1283,7 @@
   {
     "Title": "Hehlen und Westerbrak II sind die Sieger",
     "Date": "2001-09-24",
-    "Summary": "Sehr gute Leistungen bescheinigte Kreisbrandmeister Otto Wittenberg gestern Nachmittag den 22 Wehren, die auf dem Werks-parkplatz von Stiebel Eltron in Holzminden am Kreiswettbewerb der Feuerwehren teilnahmen. In zwei Gruppen - L param($m) "" schfahrzeug (LF) und Tragkraftspritzentahrzeug (TSF) - traten ab 7 Uhr morgens die Wehren an.",
+    "Summary": "Sehr gute Leistungen bescheinigte Kreisbrandmeister Otto Wittenberg gestern Nachmittag den 22 Wehren, die auf dem Werks-parkplatz von Stiebel Eltron in Holzminden am Kreiswettbewerb der Feuerwehren teilnahmen. In zwei Gruppen - Löschfahrzeug (LF) und Tragkraftspritzentahrzeug (TSF) - traten ab 7 Uhr morgens die Wehren an.",
     "Document": "./docs/2001-09-24 Kreiswettkämpfe .pdf",
     "Thumbnail": "./thumbs/2001-09-24 Kreiswettkämpfe _thumb.jpg"
   },
@@ -1421,7 +1421,7 @@
     "Thumbnail": "./thumbs/2004-07-03 Gemeindewettkämpfe _thumb.jpg"
   },
   {
-    "Title": "Gegen die Stoppuhr Menschen retien und Feuer l param($m) "" schen",
+    "Title": "Gegen die Stoppuhr Menschen retien und Feuer löschen",
     "Date": "2004-07-06",
     "Summary": "Leistungswettbewerb der Feuerwehren des Landkreises in Stadtoldendorf. 22 Gruppen wetteiferten um die beste Zeit und das korrekte Ausführen der Aufgaben. Kreisbrandmeister Friedhelm Rettger betonte die Bedeutung von Menschenrettung und Brandbekämpfung für Feuerwehrleute.",
     "Document": "./docs/2004-07-06 Kreiswettkämpfe .pdf",
@@ -1430,14 +1430,14 @@
   {
     "Title": "Zu Gast in BrevGrde",
     "Date": "2004-08-15",
-    "Summary": "Am Sonntag, dem 15. August 2004 nimmt unsere Wehr am Fest in Brev param($m) "" rde teil. Es ist heute ein warmer Sommertag, die Sonne meint es gut, gelegentliche Wolken am Himmel haben keine Bedeutung.",
+    "Summary": "Am Sonntag, dem 15. August 2004 nimmt unsere Wehr am Fest in Brevörde teil. Es ist heute ein warmer Sommertag, die Sonne meint es gut, gelegentliche Wolken am Himmel haben keine Bedeutung.",
     "Document": "./docs/2004-08-15 Feuerwehrfest Brevörde.pdf",
     "Thumbnail": "./thumbs/2004-08-15 Feuerwehrfest Brevörde_thumb.jpg"
   },
   {
     "Title": "Bezirkswettkampfe 2004 in Nienburg",
     "Date": "2004-09-19",
-    "Summary": "Es sind schon ein paar Jahre vergangen, seitdem unsere Wehr zuletzt an den Wettka param($m) "" mpfen im Regierungsbezirk Hannover teilnehmen konnte. Jetzt, wo die Landesregierung die Auflösung der bisherigen Regierungsbezirke eingeleitet hat, ist es unserer Wehr gelungen, die erforderliche Qualifikation zu erreichen. Bei den Kreiswettkampfen in Stadtoldendorf sicherte sich die Reileifzer Wehr den 4. Platz und somit die Fahrkarte nach Nienburg.",
+    "Summary": "Es sind schon ein paar Jahre vergangen, seitdem unsere Wehr zuletzt an den Wettkaömpfen im Regierungsbezirk Hannover teilnehmen konnte. Jetzt, wo die Landesregierung die Auflösung der bisherigen Regierungsbezirke eingeleitet hat, ist es unserer Wehr gelungen, die erforderliche Qualifikation zu erreichen. Bei den Kreiswettkampfen in Stadtoldendorf sicherte sich die Reileifzer Wehr den 4. Platz und somit die Fahrkarte nach Nienburg.",
     "Document": "./docs/2004-09-19 Bezirkswettkämpfe .pdf",
     "Thumbnail": "./thumbs/2004-09-19 Bezirkswettkämpfe _thumb.jpg"
   },
@@ -1514,7 +1514,7 @@
   {
     "Title": "Spannende und zugleich gesellige Feuerwehr-Wettkampfe in Silberborn",
     "Date": "2005-08-29",
-    "Summary": "Alle 28 Gruppen erhielten Pokale - nattirlich gab es fiir die vordersten Platze die gr6 param($m) "" Bten Pdtte. Die Silberborner Ortsfeuerwehr erwies sich als prima Gastgeber fiir diese spannenden und zugleich geselligen Wettkampfe in der Moosbergstrafe.",
+    "Summary": "Alle 28 Gruppen erhielten Pokale - nattirlich gab es fiir die vordersten Platze die gr6öBten Pdtte. Die Silberborner Ortsfeuerwehr erwies sich als prima Gastgeber fiir diese spannenden und zugleich geselligen Wettkampfe in der Moosbergstrafe.",
     "Document": "./docs/2005-08-29 Wettkämpfe Silberborn .pdf",
     "Thumbnail": "./thumbs/2005-08-29 Wettkämpfe Silberborn _thumb.jpg"
   },
@@ -1605,7 +1605,7 @@
   {
     "Title": "Feuerwehr Holenberg gewinnt den Wettbewerb in Meinbrexen",
     "Date": "2007-06-07",
-    "Summary": "Mit einem klaren Vorsprung gewann die Feuerwehr Holenberg die Feuerwehrwettkämpfe der Samtgemeinde Boffzen in Meinbrexen vor Reileifzen und Westerbrak. Neben Wehren aus dem Landkreis Holzminden nahmen Feuerwehrkameraden aus Sch param($m) "" nhagen, Nienover und Kammerborn an dem Wettbewerb teil.",
+    "Summary": "Mit einem klaren Vorsprung gewann die Feuerwehr Holenberg die Feuerwehrwettkämpfe der Samtgemeinde Boffzen in Meinbrexen vor Reileifzen und Westerbrak. Neben Wehren aus dem Landkreis Holzminden nahmen Feuerwehrkameraden aus Schönhagen, Nienover und Kammerborn an dem Wettbewerb teil.",
     "Document": "./docs/2007-06-07 Wettkämpfe Meinbrexen.pdf",
     "Thumbnail": "./thumbs/2007-06-07 Wettkämpfe Meinbrexen_thumb.jpg"
   },
@@ -1640,14 +1640,14 @@
   {
     "Title": "Der Siidkreis zu Gast in Stadtoldendorf",
     "Date": "2008-06-03",
-    "Summary": "Feuerwehrwettbewerbe nach neuen niedersachsischen Richtlinien. Die Feuerwehren aus dem siidlichen Teil des Landkreises trafen sich in Stadtoldendorf, um Wettbewerbe durchzufiihren. Ein L param($m) "" schangriff musste innerhalb von zehn Minuten korrekt und mit möglichst wenigen Fehlern auf- und abgebaut werden.",
+    "Summary": "Feuerwehrwettbewerbe nach neuen niedersachsischen Richtlinien. Die Feuerwehren aus dem siidlichen Teil des Landkreises trafen sich in Stadtoldendorf, um Wettbewerbe durchzufiihren. Ein Löschangriff musste innerhalb von zehn Minuten korrekt und mit möglichst wenigen Fehlern auf- und abgebaut werden.",
     "Document": "./docs/2008-06-03 Gemeindewettkämpfe .pdf",
     "Thumbnail": "./thumbs/2008-06-03 Gemeindewettkämpfe _thumb.jpg"
   },
   {
     "Title": "Scheune in Dolme brennt vollstandig nieder",
     "Date": "2008-08-13",
-    "Summary": "Mehrere 100.000 Euro Sachschaden sind bei einem Feuer entstanden, das in der Nacht zum Dienstag in einer Scheune in D param($m) "" lme ausbrach. Ein 74-jähriger Mann musste mit einer leichten Rauchgasvergiftung in das Krankenhaus Holzminden eingeliefert werden. Die Brandursache ist noch unklar.",
+    "Summary": "Mehrere 100.000 Euro Sachschaden sind bei einem Feuer entstanden, das in der Nacht zum Dienstag in einer Scheune in Dölme ausbrach. Ein 74-jähriger Mann musste mit einer leichten Rauchgasvergiftung in das Krankenhaus Holzminden eingeliefert werden. Die Brandursache ist noch unklar.",
     "Document": "./docs/2008-08-13 Scheunenbrand Dölme.pdf",
     "Thumbnail": "./thumbs/2008-08-13 Scheunenbrand Dölme_thumb.jpg"
   },
@@ -1731,7 +1731,7 @@
   {
     "Title": "Griinkohlwanderung am 28. Februar 2010",
     "Date": "2010-02-28",
-    "Summary": "Der Winter hatte uns in diesem Jahr viel Schnee gebracht. Vom letzten Silvester bis vor einigen Tagen hatte hier fast ununterbrochen die weiBe Pracht gelegen. Noch am vergangenen Sonntag hatten wir ein wenig Neuschnee. Am folgenden Montag str param($m) "" mte Warmluft zu uns ein, so dass die Schneedecke bis in den Hochsolling zuriickgedraingt wurde.",
+    "Summary": "Der Winter hatte uns in diesem Jahr viel Schnee gebracht. Vom letzten Silvester bis vor einigen Tagen hatte hier fast ununterbrochen die weiBe Pracht gelegen. Noch am vergangenen Sonntag hatten wir ein wenig Neuschnee. Am folgenden Montag strömte Warmluft zu uns ein, so dass die Schneedecke bis in den Hochsolling zuriickgedraingt wurde.",
     "Document": "./docs/2010-02-28 Grünkohlwanderung .pdf",
     "Thumbnail": "./thumbs/2010-02-28 Grünkohlwanderung _thumb.jpg"
   },
@@ -1787,7 +1787,7 @@
   {
     "Title": "Kuppelzeit entscheidet iiber den Sieg",
     "Date": "2012-05-15",
-    "Summary": "Bei sehr sch param($m) ""  nem Wetter starteten die 16 angereisten Wehren am Sportplatz in Holenberg zu einem Verpncwet ee. Der Wettbewerb verlief sehr professionell, so brauchte das Wettbewerbsgericht unter der Leitung von ie gen Siefarth kaum Fehlerpunkte zu vergeben.",
+    "Summary": "Bei sehr schö nem Wetter starteten die 16 angereisten Wehren am Sportplatz in Holenberg zu einem Verpncwet ee. Der Wettbewerb verlief sehr professionell, so brauchte das Wettbewerbsgericht unter der Leitung von ie gen Siefarth kaum Fehlerpunkte zu vergeben.",
     "Document": "./docs/2012 Gesamt .pdf",
     "Thumbnail": "./thumbs/2012 Gesamt _thumb.jpg"
   },
@@ -1829,14 +1829,14 @@
   {
     "Title": "Reileifzer Kommando fiir weitere sechs Jahre gewahlt",
     "Date": "2013-01-17",
-    "Summary": "In der Jahreshauptversammiung der Ortsfeuerwehr Reileifzen wurden Ortsbrandmeister Marco Eikhoff und sein Stellvertreter Dirk Schtinemann fur weitere sechs Jahre wiedergewahlit. Ins Kommando gewahlt wurden auBerdem Schriftftihrerin Melanie Gruhn, Kassenwartin Carola Tacke, Gruppenfihrer Jens Klages und sein Stellvertreter Marcel Eikhoff. Ger param($m) "" tewart Tobias Hoffmeister, Sicherheitsbeauftragter Dirk Schtinemann, Atemschutzbeauftragter Ralf Bergmeier, Frauensprecherin Tina Bergmeier, Feuerwehranwarter Domenik Schtinemann und Niklas Bertram wurden ebenfalls erwahnt.",
+    "Summary": "In der Jahreshauptversammiung der Ortsfeuerwehr Reileifzen wurden Ortsbrandmeister Marco Eikhoff und sein Stellvertreter Dirk Schtinemann fur weitere sechs Jahre wiedergewahlit. Ins Kommando gewahlt wurden auBerdem Schriftftihrerin Melanie Gruhn, Kassenwartin Carola Tacke, Gruppenfihrer Jens Klages und sein Stellvertreter Marcel Eikhoff. Gerötewart Tobias Hoffmeister, Sicherheitsbeauftragter Dirk Schtinemann, Atemschutzbeauftragter Ralf Bergmeier, Frauensprecherin Tina Bergmeier, Feuerwehranwarter Domenik Schtinemann und Niklas Bertram wurden ebenfalls erwahnt.",
     "Document": "./docs/2013 Gesamt .pdf",
     "Thumbnail": "./thumbs/2013 Gesamt _thumb.jpg"
   },
   {
     "Title": "Reileifzer Kommando fiir weitere sechs Jahre gewahlt",
     "Date": "2013-01-17",
-    "Summary": "In der Jahreshauptversammiung der Ortsfeuerwehr Reileifzen wurden Ortsbrandmeister Marco Eikhoff und sein Stellvertreter Dirk Schtinemann fur weitere sechs Jahre wiedergewahlt. Ins Kommando gewahlt wurden auBerdem Schriftftihrerin Melanie Gruhn, Kassenwartin Carola Tacke, Gruppenfihrer Jens Klages und sein Stellvertreter Marcel Eikhoff. Ger param($m) "" tewart Tobias Hoffmeister, Sicherheitsbeauftragter Dirk Schtinemann, Atemschutzbeauftragter Ralf Bergmeier, Frauensprecherin Tina Bergmeier, Domenik Schtinemann und Niklas Bertram wurden zu Feuerwehranwärtern ernannt, Jens Klages zum Loschmeister befördert.",
+    "Summary": "In der Jahreshauptversammiung der Ortsfeuerwehr Reileifzen wurden Ortsbrandmeister Marco Eikhoff und sein Stellvertreter Dirk Schtinemann fur weitere sechs Jahre wiedergewahlt. Ins Kommando gewahlt wurden auBerdem Schriftftihrerin Melanie Gruhn, Kassenwartin Carola Tacke, Gruppenfihrer Jens Klages und sein Stellvertreter Marcel Eikhoff. Gerötewart Tobias Hoffmeister, Sicherheitsbeauftragter Dirk Schtinemann, Atemschutzbeauftragter Ralf Bergmeier, Frauensprecherin Tina Bergmeier, Domenik Schtinemann und Niklas Bertram wurden zu Feuerwehranwärtern ernannt, Jens Klages zum Loschmeister befördert.",
     "Document": "./docs/2013-01-17 Jahreshauptversammlung .pdf",
     "Thumbnail": "./thumbs/2013-01-17 Jahreshauptversammlung _thumb.jpg"
   },
@@ -1911,9 +1911,9 @@
     "Thumbnail": "./thumbs/2015-07-03 Feuerwehrfest _thumb.jpg"
   },
   {
-    "Title": "Milchkammerbrand in D param($m) "" lme",
+    "Title": "Milchkammerbrand in Dölme",
     "Date": "2015-11-19",
-    "Summary": "Viel hat nicht mehr gefehlt, dann wäre aus dem Brand auf einem landwirtschaftlichen Hof in D param($m) "" lme gestern Morgen ein Großeinsatz geworden. Das Feuer brach in der Milchkammer aus und zerstörte die Kühl- und Melkanlage. Der Landwirt entdeckte das Feuer rechtzeitig, sodass Schlimmeres verhindert werden konnte. Die Brandursache wird noch ermittelt.",
+    "Summary": "Viel hat nicht mehr gefehlt, dann wäre aus dem Brand auf einem landwirtschaftlichen Hof in Dölme gestern Morgen ein Großeinsatz geworden. Das Feuer brach in der Milchkammer aus und zerstörte die Kühl- und Melkanlage. Der Landwirt entdeckte das Feuer rechtzeitig, sodass Schlimmeres verhindert werden konnte. Die Brandursache wird noch ermittelt.",
     "Document": "./docs/2015-11-19 Milchkammerbrand.pdf",
     "Thumbnail": "./thumbs/2015-11-19 Milchkammerbrand_thumb.jpg"
   },
@@ -1941,7 +1941,7 @@
   {
     "Title": "Griinkohlwanderung der Feuerwehr Reileifzen",
     "Date": "2017-03-06",
-    "Summary": "Bei der traditionellen Griinkohlwanderung der Feuerwehr Reileifzen herrschte genau das richtige Wetter zum Wandern. Etwa 50 Wanderer machten sich auf den Weg Uber den Berg von Reileifzen in Richtung D param($m) "" lme.",
+    "Summary": "Bei der traditionellen Griinkohlwanderung der Feuerwehr Reileifzen herrschte genau das richtige Wetter zum Wandern. Etwa 50 Wanderer machten sich auf den Weg Uber den Berg von Reileifzen in Richtung Dölme.",
     "Document": "./docs/2017-03-06 Grünkohlwanderung .pdf",
     "Thumbnail": "./thumbs/2017-03-06 Grünkohlwanderung _thumb.jpg"
   },
@@ -1976,14 +1976,14 @@
   {
     "Title": "Schwerer Verkehrsunfall zwischen Forst und Reileifzen",
     "Date": "2020-07-28",
-    "Summary": "Ein schwerer Verkehrsunfall hat sich am Dienstagvormittag, gegen 10:30 Uhr, auf der KreisstraBe 59 zwischen Forst und Reileifzen ereignet. Eine 60 Jahre alte Frau ist mit inrem Suzuki aus bislang ungeklarter Ursache in einer Linkskurve von der KreisstraBe abgekommen. Die Frau wurde durch die Feuerwehr aus dem zerst6 param($m) "" rten Suzuki gerettet und ins Krankenhaus gebracht.",
+    "Summary": "Ein schwerer Verkehrsunfall hat sich am Dienstagvormittag, gegen 10:30 Uhr, auf der KreisstraBe 59 zwischen Forst und Reileifzen ereignet. Eine 60 Jahre alte Frau ist mit inrem Suzuki aus bislang ungeklarter Ursache in einer Linkskurve von der KreisstraBe abgekommen. Die Frau wurde durch die Feuerwehr aus dem zerst6örten Suzuki gerettet und ins Krankenhaus gebracht.",
     "Document": "./docs/2020-07-28 Verkehrsunfall .pdf",
     "Thumbnail": "./thumbs/2020-07-28 Verkehrsunfall _thumb.jpg"
   },
   {
     "Title": "Feuerwehr Reileifzen sagt Zeltfest fur Juli ab",
     "Date": "2021-03-23",
-    "Summary": "Die Feuerwehr Reileifzen wollte ihr 145-jahriges Bestehen im Juli 2020 mit einem Zeltfest feiern, dieses musste jedoch aufgrund der Corona-Pandemie in das Jahr 2021 verschoben werden. Auch der fur 2021 geplante Ersatztermin fur das Zeltfest vom 2. Juli bis 4. Juli wird nicht stattfinden k param($m) "" nnen.",
+    "Summary": "Die Feuerwehr Reileifzen wollte ihr 145-jahriges Bestehen im Juli 2020 mit einem Zeltfest feiern, dieses musste jedoch aufgrund der Corona-Pandemie in das Jahr 2021 verschoben werden. Auch der fur 2021 geplante Ersatztermin fur das Zeltfest vom 2. Juli bis 4. Juli wird nicht stattfinden können.",
     "Document": "./docs/2021-03-23 Absage Feuerwehrfest.pdf",
     "Thumbnail": "./thumbs/2021-03-23 Absage Feuerwehrfest_thumb.jpg"
   },
@@ -2032,7 +2032,7 @@
   {
     "Title": "Unfall zwischen Reileifzen und Dolme: Skoda landet im StraBengraben",
     "Date": "2023-05-04",
-    "Summary": "Bei einem Unfall zwischen Reileifzen und D param($m) "" lme wurde eine Frau aus Ruhle leicht verletzt. Die 72-Jährige geriet mit ihrem Skoda Fabia ins Schleudern und landete im Straßengraben. Glücklicherweise konnte sie das Auto eigenständig verlassen und wurde nur leicht verletzt.",
+    "Summary": "Bei einem Unfall zwischen Reileifzen und Dölme wurde eine Frau aus Ruhle leicht verletzt. Die 72-Jährige geriet mit ihrem Skoda Fabia ins Schleudern und landete im Straßengraben. Glücklicherweise konnte sie das Auto eigenständig verlassen und wurde nur leicht verletzt.",
     "Document": "./docs/2023-05-04 Skoda landet in Straßengraben.pdf",
     "Thumbnail": "./thumbs/2023-05-04 Skoda landet in Straßengraben_thumb.jpg"
   },
@@ -2065,7 +2065,7 @@
     "Thumbnail": "./thumbs/2024-11-08 Frontalcrash bei Arholzen_thumb.jpg"
   },
   {
-    "Title": "Schornsteinbrand in D param($m) "" lme - Feuerwehr und Schornsteinfeger im Einsatz",
+    "Title": "Schornsteinbrand in Dölme - Feuerwehr und Schornsteinfeger im Einsatz",
     "Date": "2024-11-10",
     "Summary": "Am heutigen Sonntagvormittag wurde die Feuerwehr zu einem Dachstuhlbrand nach Ddlme alarmiert. Vor Ort stellte sich heraus, dass es sich glucklicherweise bloB um einen Schornsteinbrand handelte. Der Brand wurde durch Ablagerungen im Schornstein verursacht.",
     "Document": "./docs/2024-11-10 Schornsteinbrand Dölme.pdf",

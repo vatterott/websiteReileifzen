@@ -1,46 +1,3 @@
-/* body {
-    font-family: Arial, sans-serif;
-    margin: 20px;
-}
-
-h1 {
-    font-family: 'Arial', sans-serif; /* Verwendung einer schlichten Schriftart; Sie können auch Google Fonts für mehr Stiloptionen verwenden */
-    font-size: 2.5em;                 /* Größere Schriftgröße */
-    text-transform: uppercase;       /* Text in Großbuchstaben umwandeln */
-    letter-spacing: 2px;             /* Buchstabenabstand erhöhen */
-    color: #333;                     /* Dunkelgrauer Text für bessere Lesbarkeit */
-    text-shadow: 2px 2px 4px #aaa;   /* Textschatten für Tiefe */
-    padding-bottom: 10px;            /* Unteren Abstand hinzufügen */
-    border-bottom: 3px solid #e5e5e5;/* Untere Grenzlinie für zusätzliche Betonung */
-    margin-bottom: 20px;             /* Abstand nach dem Titel */
-    display: inline-block;           /* So dass der Hintergrund und die untere Grenze nur so breit wie der Text sind */
-}
-
-a {
-    color: #007BFF;          /* Hauptfarbe für den Link (in diesem Fall ein Blauton) */
-    text-decoration: none;  /* Entfernt die Unterstreichung */
-    transition: color 0.3s; /* Glatter Übergang für Farbänderungen */
-    font-weight: 500;       /* Halbfett für mehr Betonung */
-    border-bottom: 1px solid #007BFF; /* Untere Grenzlinie für den visuellen Akzent */
-    padding-bottom: 2px;    /* Ein wenig Polsterung unten, um den Abstand zur Grenzlinie zu erhöhen */
-}
-
-a:hover {
-    color: #0056b3;          /* Dunklerer Blauton beim Überfahren mit der Maus */
-    border-bottom-color: #0056b3; /* Dunklerer Blauton für die untere Grenzlinie beim Überfahren mit der Maus */
-}
-
-a:active {
-    color: #004085;          /* Noch dunklerer Blauton beim Klicken */
-    border-bottom-color: #004085; /* Noch dunklerer Blauton für die untere Grenzlinie beim Klicken */
-}
-
-a:focus {
-    outline: none;           /* Entfernt den standardmäßigen Browser-Fokus-Stil */
-    box-shadow: 0 0 0 3px rgba(0,123,255, 0.5); /* Fügt einen blauen Fokus-Schatten um den Link hinzu */
-} */
-
-
 .chr_search-container {
     display: flex;
     flex-direction: column;
@@ -82,8 +39,8 @@ a:focus {
 
 .chr_search-container input[type="text"]:focus,
 .chr_search-container input[type="date"]:focus {
-    border-color: var(--theme-secondary, #ff8f00);
-    box-shadow: 0 0 0 3px rgba(255, 143, 0, 0.18);
+    border-color: var(--theme-secondary, #FF5722);
+    box-shadow: 0 0 0 3px rgba(255, 87, 34, 0.18);
 }
 
 .chr_search-container label {
@@ -96,8 +53,8 @@ a:focus {
 .chr_search-container button {
     cursor: pointer;
     padding: 10px 30px;
-    background: var(--theme-primary, #FFCE31);
-    color: var(--theme-accent, #333);
+    background: var(--theme-primary, #D32F2F);
+    color: var(--theme-accent, #fff);
     border: none;
     border-radius: 50px;
     font-size: 0.95rem;
@@ -108,7 +65,7 @@ a:focus {
 }
 
 .chr_search-container button:hover {
-    background: var(--theme-secondary, #ff8f00);
+    background: var(--theme-secondary, #FF5722);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.22);
 }
@@ -190,14 +147,14 @@ a:focus {
 
 #pagination button:hover {
     background: rgba(255, 255, 255, 0.95);
-    border-color: var(--theme-primary, #ccc);
+    border-color: var(--theme-primary, #D32F2F);
     transform: translateY(-1px);
 }
 
 #pagination button.chr_active {
-    background: var(--theme-primary, #4CAF50);
+    background: var(--theme-primary, #D32F2F);
     color: var(--theme-accent, white);
-    border-color: var(--theme-primary, #4CAF50);
+    border-color: var(--theme-primary, #D32F2F);
     font-weight: 700;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
 }
