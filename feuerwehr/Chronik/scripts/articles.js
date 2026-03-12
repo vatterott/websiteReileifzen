@@ -268,7 +268,7 @@
   {
     "Title": "Feuerwehrwettbewerb in Dölme",
     "Date": "1984-07-06",
-    "Summary": "Die Freiwillige Feuerwehr D param($m) "" lme hatte zum Scheunenfest mit Wettkämpfen eingeladen. Es gab einen Discoabend, Festgottesdienst, Festball und Feuerwehrwettkämpfe. Die Gruppe II der Freiwilligen Feuerwehr Reileifzen belegte den ersten Platz.",
+    "Summary": "Die Freiwillige Feuerwehr Dölme hatte zum Scheunenfest mit Wettkämpfen eingeladen. Es gab einen Discoabend, Festgottesdienst, Festball und Feuerwehrwettkämpfe. Die Gruppe II der Freiwilligen Feuerwehr Reileifzen belegte den ersten Platz.",
     "Document": "./docs/1984-07-06 Feuerwehrwettbewerb Dölme.pdf",
     "Thumbnail": "./thumbs/1984-07-06 Feuerwehrwettbewerb Dölme_thumb.jpg"
   },
@@ -296,7 +296,7 @@
   {
     "Title": "Bezirkswettksmpte Hannover",
     "Date": "1985-05-05",
-    "Summary": "Bezirkswettksmpte Hannover, dnlaBlich Jubilsum Regierungsbezirk - 9 Plata. Teilnehmer: Erich Knischewski, Hans-~ Jargen Beck, Dirk Scha param($m) "" nemann, Friedel Hoffmeister, Hans - Erich Knischewshy, Arnold Mewes, Michael Kuhnt, Rudolf Tacke, Karl- Heinz Beck, Martin Eikhoff, Wolfgang Klages.",
+    "Summary": "Bezirkswettksmpte Hannover, dnlaBlich Jubilsum Regierungsbezirk - 9 Platz. Teilnehmer: Erich Knischewski, Hans Jargen Beck, Dirk Schünemann, Friedel Hoffmeister, Hans - Erich Knischewshy, Arnold Mewes, Michael Kuhnt, Rudolf Tacke, Karl- Heinz Beck, Martin Eikhoff, Wolfgang Klages.",
     "Document": "./docs/1985-05-05 Bezirkswettkämpfe Hannover.pdf",
     "Thumbnail": "./thumbs/1985-05-05 Bezirkswettkämpfe Hannover_thumb.jpg"
   },
@@ -616,7 +616,7 @@
     "Thumbnail": "./thumbs/1992-09-02 Kreiswettkämpfe_thumb.jpg"
   },
   {
-    "Title": "Martin Eikhoff zum Brandmeister bef param($m) "" rdert",
+    "Title": "Martin Eikhoff zum Brandmeister befördert",
     "Date": "1993-01-26",
     "Summary": "Im Gasthause Schaper trafen sich vor kurzem die Reileifzer Feuerwehrmitglieder um Bilanz tiber das verflossene Jahr zu zichen. Martin Eikhoff, der neue Ortsbrandmeister begriiBte die Ehrengaste, von der Samtgemeinde Bevern. Neben dem eigentlichen Feuerwehrdienst erfiillte die Ortswehr noch wichtige Aufgabeq im Dorfleben.",
     "Document": "./docs/1993 Gesamt .pdf",
@@ -625,12 +625,12 @@
   {
     "Title": "Bikhoff Brandmeister.",
     "Date": "1993-01-26",
-    "Summary": "Im letzten Jahr gab es Zwei Hilfeleistungen bei Verkehrs- unfallen. Hohepunkt waren Ehrungen und Beforderungen. Fiir.25jahrige Mitgliedschaft erhielt Giinter Beck ei- ne Urkunde. Nach erfolgreicher Teil- nahme an Lehrgingen konnte Mar- kus Sporleder zum Feuerwehr- mann und Carola Tacke zur Haupt : feuerwehrassistentin bef param($m) "" rdert wer- den.",
+    "Summary": "Im letzten Jahr gab es Zwei Hilfeleistungen bei Verkehrs- unfallen. Hohepunkt waren Ehrungen und Beforderungen. Fiir.25jahrige Mitgliedschaft erhielt Giinter Beck ei- ne Urkunde. Nach erfolgreicher Teil- nahme an Lehrgingen konnte Mar- kus Sporleder zum Feuerwehr- mann und Carola Tacke zur Haupt : feuerwehrassistentin befördert werden.",
     "Document": "./docs/1993 Gesamt .pdf",
     "Thumbnail": "./thumbs/1993 Gesamt _thumb.jpg"
   },
   {
-    "Title": "Martin Eikhoff zum Brandmeister bef param($m) "" rdert",
+    "Title": "Martin Eikhoff zum Brandmeister befördert",
     "Date": "1993-01-26",
     "Summary": "Im Gasthause Schaper trafen sich vor kurzem die Reileifzer Feuerwehrmitglieder um Bilanz tiber das verflossene Jahr zu zichen. Martin Eikhoff, der neue Ortsbrandmeister begriiBte die Ehrengaste und brachte einen ausfithrlichen Jahresbericht. Neben dem eigentlichen Feuerwehrdienst erfiillte die Ortswehr noch wichtige Aufgaben im Dorfleben.",
     "Document": "./docs/1993-01-26 Jahreshauptversammlung .pdf",
@@ -639,12 +639,12 @@
   {
     "Title": "Bikhoff Brandmeister",
     "Date": "1993-01-26",
-    "Summary": "Im letzten Jahr gab es zwei Hilfeleistungen bei Verkehrs- unfallen. Hohepunkt waren Ehrungen und Beforderungen. Fiir 25jahrige Mitgliedschaft erhielt Giinter Beck eine Urkunde. Nach erfolgreicher Teilnahme an Lehrgingen konnte Markus Sporleder zum Feuerwehr- mann und Carola Tacke zur Haupt feuerwehrassistentin bef param($m) "" rdert werden.",
+    "Summary": "Im letzten Jahr gab es zwei Hilfeleistungen bei Verkehrs- unfallen. Hohepunkt waren Ehrungen und Beforderungen. Fiir 25jahrige Mitgliedschaft erhielt Giinter Beck eine Urkunde. Nach erfolgreicher Teilnahme an Lehrgingen konnte Markus Sporleder zum Feuerwehr- mann und Carola Tacke zur Haupt feuerwehrassistentin befördert werden.",
     "Document": "./docs/1993-01-26 Jahreshauptversammlung .pdf",
     "Thumbnail": "./thumbs/1993-01-26 Jahreshauptversammlung _thumb.jpg"
   },
   {
-    "Title": "Ehrungen und Bef param($m) "" rderungen bei der Feuerwehr",
+    "Title": "Ehrungen und Beförderungen bei der Feuerwehr",
     "Date": "1993-02-17",
     "Summary": "Hohepunkt der Jahreshauptversammlung bei der Freiwilligen Feuerwehr Reileifzen waren Ehrungen und Beförderungen. Ginter Beck wurde für 25-jährige Mitgliedschaft ausgezeichnet. Verschiedene Mitglieder erhielten Ehrenteller und wurden befördert.",
     "Document": "./docs/1993-02-17 Jahreshauptversammlung .pdf",
@@ -681,7 +681,7 @@
   {
     "Title": "Keine Hektik, nur fair-play",
     "Date": "1993-09-29",
-    "Summary": "Die Gruppenbewertung wurde aufgeteilt in TS-Gruppen und LF-Gruppen. Wettbewerbsleiter Gerhard G param($m) "" mann aus Bodenwerder war zufrieden über den Verlauf. In zwei Zeittakten wurden die Leistungen gemessen, die eine Gesamtzeit von zwölf Minuten nicht überschreiten sollen.",
+    "Summary": "Die Gruppenbewertung wurde aufgeteilt in TS-Gruppen und LF-Gruppen. Wettbewerbsleiter Gerhard Göhmann aus Bodenwerder war zufrieden über den Verlauf. In zwei Zeittakten wurden die Leistungen gemessen, die eine Gesamtzeit von zwölf Minuten nicht überschreiten sollen.",
     "Document": "./docs/1993-09-29 Kreiswettkämpfe.pdf",
     "Thumbnail": "./thumbs/1993-09-29 Kreiswettkämpfe_thumb.jpg"
   },
@@ -695,7 +695,7 @@
   {
     "Title": "Die Sieger",
     "Date": "1993-09-29",
-    "Summary": "Die Siegerehrung nach Abschluss der Wettkämpfe durch Gerhard G param($m) "" mann sah folgende Platzierungen vor: TS-Gruppen: Erster Meinbrexen mit 450,85 Punkten, gefolgt von Emmerborn mit 441 und Denkiehausen mit 440,85 Punkten. LF-Gruppen: Erster Kemnade mit 441,99 Punkten, gefolgt von Stadtoldendorf mit 439,72 und Hehlen mit 429,88 Punkten.",
+    "Summary": "Die Siegerehrung nach Abschluss der Wettkämpfe durch Gerhard Göhmann sah folgende Platzierungen vor: TS-Gruppen: Erster Meinbrexen mit 450,85 Punkten, gefolgt von Emmerborn mit 441 und Denkiehausen mit 440,85 Punkten. LF-Gruppen: Erster Kemnade mit 441,99 Punkten, gefolgt von Stadtoldendorf mit 439,72 und Hehlen mit 429,88 Punkten.",
     "Document": "./docs/1993-09-29 Kreiswettkämpfe.pdf",
     "Thumbnail": "./thumbs/1993-09-29 Kreiswettkämpfe_thumb.jpg"
   },
@@ -721,9 +721,9 @@
     "Thumbnail": "./thumbs/1994 Gesamt _thumb.jpg"
   },
   {
-    "Title": "Samtgemeindedirektor Friedrich D param($m) "" rnemann sprach von der dünner werdenden Finanzdecke",
+    "Title": "Samtgemeindedirektor Friedrich Dormann sprach von der dünner werdenden Finanzdecke",
     "Date": "1994-01-21",
-    "Summary": "Samtgemeindedirektor Friedrich D param($m) "" rnemann sprach von der dünner werdenden Finanzdecke der Samtgemeinde Bevern. Unter Umständen ist mit einer geringfügigen Rücknahme der Mittel zu rechnen, sagte er. Doch die Verpflichtungen gegenüber den Feuerwehren werde die Samtgemeinde erfüllen.",
+    "Summary": "Samtgemeindedirektor Friedrich Dormann sprach von der dünner werdenden Finanzdecke der Samtgemeinde Bevern. Unter Umständen ist mit einer geringfügigen Rücknahme der Mittel zu rechnen, sagte er. Doch die Verpflichtungen gegenüber den Feuerwehren werde die Samtgemeinde erfüllen.",
     "Document": "./docs/1994 Gesamt .pdf",
     "Thumbnail": "./thumbs/1994 Gesamt _thumb.jpg"
   },
@@ -877,7 +877,7 @@
   {
     "Title": "Freiwillige Feuerwehr Reileifzen zog Bilanz",
     "Date": "1996-01-20",
-    "Summary": "Verdiente Feuerwehrleute in Reileifzen wurden ausgezeichnet und befordert. Mit Ehrungen und Bef param($m) "" rderungen hat Reileifzens Feuerwehr das neue Jahr begonnen. Auf der Wunschliste ganz oben steht der Umbau des Gerätehauses. Zu Oberfeuerwehrmännern wurden an diesem Abend befördert: Ralf Horn und Klaus-Dieter Müller.",
+    "Summary": "Verdiente Feuerwehrleute in Reileifzen wurden ausgezeichnet und befordert. Mit Ehrungen und Beförderungen hat Reileifzens Feuerwehr das neue Jahr begonnen. Auf der Wunschliste ganz oben steht der Umbau des Gerätehauses. Zu Oberfeuerwehrmännern wurden an diesem Abend befördert: Ralf Horn und Klaus-Dieter Müller.",
     "Document": "./docs/1996-01-20 Jahreshauptversammlung .pdf",
     "Thumbnail": "./thumbs/1996-01-20 Jahreshauptversammlung _thumb.jpg"
   },
@@ -1227,7 +1227,7 @@
   {
     "Title": "21 Teams beim Wettkampf",
     "Date": "2000-08-28",
-    "Summary": "Insgesamt 21 Wehren aus dem Kreis Holzminden und der Stadt Hoxter beteiligten sich an den Wettkimpfen, bei denen die Feuerwehrleute ihre Fertigkeiten beim Kuppeln, Ausrollen und Einsetzen der Schlauche beweisen mussten. Unter den kritischen Augen von Gemeindebrandmeister Heinrich Hesse, dem stellvertretenden Ab- schnittsleiter Siid Harald Gomann und Samtgemeindedirektor D param($m) "" rnemann erkimpfte sich die Feuerwehr Reileifzen den Siegerpokal, gefolgt von den Wehren Holenberg und Silber- born auf den Plitzen zwei und drei.",
+    "Summary": "Insgesamt 21 Wehren aus dem Kreis Holzminden und der Stadt Hoxter beteiligten sich an den Wettkimpfen, bei denen die Feuerwehrleute ihre Fertigkeiten beim Kuppeln, Ausrollen und Einsetzen der Schlauche beweisen mussten. Unter den kritischen Augen von Gemeindebrandmeister Heinrich Hesse, dem stellvertretenden Ab- schnittsleiter Siid Harald Gomann und Samtgemeindedirektor Dormann erkimpfte sich die Feuerwehr Reileifzen den Siegerpokal, gefolgt von den Wehren Holenberg und Silber- born auf den Plitzen zwei und drei.",
     "Document": "./docs/2000-08-28 Wettkämpfe Lütgenade .pdf",
     "Thumbnail": "./thumbs/2000-08-28 Wettkämpfe Lütgenade _thumb.jpg"
   },
@@ -1631,7 +1631,7 @@
     "Thumbnail": "./thumbs/2008-01-12 Jahreshauptversammlung _thumb.jpg"
   },
   {
-    "Title": "Ehrungen und Bef param($m) "" rderungen bei der Reileifzer Ortswehr",
+    "Title": "Ehrungen und Beförderungen bei der Reileifzer Ortswehr",
     "Date": "2008-01-12",
     "Summary": "Bei der Jahreshauptversammlung der Ortsfeuerwehr Reileifzen wurden Mitglieder für ihre langjährige Treue und ihren aktiven Dienst geehrt und befördert.",
     "Document": "./docs/2008-01-12 Jahreshauptversammlung .pdf",
@@ -1962,14 +1962,14 @@
   {
     "Title": "Viele Dienstabende, Veranstaltungen und zwei Brandeinsatze: Feuerwehr Reileifzen blickt zuruck auf 2019",
     "Date": "2020-01-27",
-    "Summary": "Ortsbrandmeister Marco Eikhoff konnte bei der Jahreshauptversammlung der Feuerwehr Reileifzen auf viele Dienstabende, Veranstaltungen und zwei Brandeinsatze im vergangenen Jahr zuruckblicken. Es wurde eine neue Tragkraftspritze in Betrieb genommen und Bef param($m) "" rderungen vorgenommen. Das 145-jahrige Bestehen der Feuerwehr Reileifzen wird vom 10.bis 12. Juli 2020 mit einem Zeltfest an der Weser gefeiert.",
+    "Summary": "Ortsbrandmeister Marco Eikhoff konnte bei der Jahreshauptversammlung der Feuerwehr Reileifzen auf viele Dienstabende, Veranstaltungen und zwei Brandeinsatze im vergangenen Jahr zuruckblicken. Es wurde eine neue Tragkraftspritze in Betrieb genommen und Beförderungen vorgenommen. Das 145-jahrige Bestehen der Feuerwehr Reileifzen wird vom 10.bis 12. Juli 2020 mit einem Zeltfest an der Weser gefeiert.",
     "Document": "./docs/2020 Gesamt .pdf",
     "Thumbnail": "./thumbs/2020 Gesamt _thumb.jpg"
   },
   {
     "Title": "Viele Dienstabende, Veranstaltungen und zwei Brandeinsatze: Feuerwehr Reileifzen blickt zuruck auf 2019",
     "Date": "2020-01-27",
-    "Summary": "Ortsbrandmeister Marco Eikhoff konnte bei der Jahreshauptversammlung der Feuerwehr Reileifzen auf viele Dienstabende, Veranstaltungen und zwei Brandeinsatze im vergangenen Jahr zuruckblicken. Es wurde eine neue Tragkraftspritze in Betrieb genommen und Bef param($m) "" rderungen vorgenommen. Das 145-jahrige Bestehen der Feuerwehr Reileifzen wird vom 10.bis 12. Juli 2020 mit einem Zeltfest an der Weser gefeiert.",
+    "Summary": "Ortsbrandmeister Marco Eikhoff konnte bei der Jahreshauptversammlung der Feuerwehr Reileifzen auf viele Dienstabende, Veranstaltungen und zwei Brandeinsatze im vergangenen Jahr zuruckblicken. Es wurde eine neue Tragkraftspritze in Betrieb genommen und Beförderungen vorgenommen. Das 145-jahrige Bestehen der Feuerwehr Reileifzen wird vom 10.bis 12. Juli 2020 mit einem Zeltfest an der Weser gefeiert.",
     "Document": "./docs/2020-01-27 Jahreshauptversammlung .pdf",
     "Thumbnail": "./thumbs/2020-01-27 Jahreshauptversammlung _thumb.jpg"
   },
