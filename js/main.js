@@ -1,3 +1,7 @@
+// Lightbox navigation state
+let _lightboxImages = [];
+let _lightboxIndex  = -1;
+
 document.addEventListener('DOMContentLoaded', () => {
     loadMenu();
     updateFooterByPath('verkehrsverein/index.html');
@@ -53,6 +57,23 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', updateMenuVisibilityOnScroll, { passive: true });
     updateMenuVisibilityOnScroll();
 
+    // Scroll-to-top button
+    const scrollBtn = document.getElementById('scroll-to-top-btn');
+    if (scrollBtn) {
+        const SCROLL_THRESHOLD = 300;
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > SCROLL_THRESHOLD) {
+                scrollBtn.classList.add('visible');
+            } else {
+                scrollBtn.classList.remove('visible');
+            }
+        }, { passive: true });
+
+        scrollBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    }
+
     // Handle Browser Back/Forward Buttons
     window.addEventListener('popstate', (event) => {
         if (event.state && event.state.path) {
@@ -79,9 +100,23 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('click', (e) => {
         const galleryImage = e.target.closest('.gaense-gallery-grid img');
         if (galleryImage) {
-            openGaenseLightbox(galleryImage.getAttribute('src'), galleryImage.getAttribute('alt') || 'Großansicht Bild');
+            const grid = galleryImage.closest('.gaense-gallery-grid');
+            const allImgs = grid ? Array.from(grid.querySelectorAll('img')) : [galleryImage];
+            const idx = allImgs.indexOf(galleryImage);
+            openGaenseLightbox(
+                galleryImage.getAttribute('src'),
+                galleryImage.getAttribute('alt') || 'Großansicht Bild',
+                allImgs,
+                idx
+            );
             return;
         }
+
+        const prevNavBtn = e.target.closest('#gaense-lightbox-prev');
+        if (prevNavBtn) { navigateLightbox(-1); return; }
+
+        const nextNavBtn = e.target.closest('#gaense-lightbox-next');
+        if (nextNavBtn) { navigateLightbox(1); return; }
 
         const closeLightboxTrigger = e.target.closest('[data-lightbox-close="true"]');
         if (closeLightboxTrigger) {
@@ -146,6 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
             closeGaenseLightbox();
             closeAllOpenSubmenus();
         }
+        if (e.key === 'ArrowLeft')  { navigateLightbox(-1); }
+        if (e.key === 'ArrowRight') { navigateLightbox(1); }
     });
 
 
@@ -488,16 +525,28 @@ function switchCSS(href) {
     }
 }
 
-function openGaenseLightbox(imageSrc, imageAlt) {
+function openGaenseLightbox(imageSrc, imageAlt, images, index) {
     ensureGaenseLightbox();
     const lightbox = document.getElementById('gaense-lightbox');
     const lightboxImage = document.getElementById('gaense-lightbox-image');
     if (!lightbox || !lightboxImage || !imageSrc) return;
 
+    if (Array.isArray(images) && images.length > 1) {
+        _lightboxImages = images.map(img => ({
+            src: img.getAttribute('src'),
+            alt: img.getAttribute('alt') || 'Großansicht Bild'
+        }));
+        _lightboxIndex = (typeof index === 'number') ? index : 0;
+    } else {
+        _lightboxImages = [{ src: imageSrc, alt: imageAlt || 'Großansicht Bild' }];
+        _lightboxIndex = 0;
+    }
+
     lightboxImage.src = imageSrc;
     lightboxImage.alt = imageAlt || 'Großansicht Bild';
     lightbox.hidden = false;
     document.body.style.overflow = 'hidden';
+    updateLightboxNavButtons();
 }
 
 function closeGaenseLightbox() {
@@ -511,6 +560,8 @@ function closeGaenseLightbox() {
         lightboxImage.alt = 'Großansicht Bild';
     }
     document.body.style.overflow = '';
+    _lightboxImages = [];
+    _lightboxIndex  = -1;
 }
 
 function ensureGaenseLightbox() {
@@ -522,13 +573,37 @@ function ensureGaenseLightbox() {
     lightbox.hidden = true;
     lightbox.innerHTML = `
         <div class="gaense-lightbox-backdrop" data-lightbox-close="true"></div>
-        <div class="gaense-lightbox-content" role="dialog" aria-modal="true" aria-label="Großansicht Bild">
-            <button type="button" class="gaense-lightbox-close" data-lightbox-close="true" aria-label="Großansicht schließen">&times;</button>
-            <img id="gaense-lightbox-image" src="" alt="Großansicht Bild">
+        <div class="gaense-lightbox-content" role="dialog" aria-modal="true" aria-label="Gro\u00dfansicht Bild">
+            <button type="button" class="gaense-lightbox-close" data-lightbox-close="true" aria-label="Gro\u00dfansicht schlie\u00dfen">&times;</button>
+            <button type="button" class="gaense-lightbox-nav gaense-lightbox-prev" id="gaense-lightbox-prev" aria-label="Vorheriges Bild">&#8249;</button>
+            <button type="button" class="gaense-lightbox-nav gaense-lightbox-next" id="gaense-lightbox-next" aria-label="N\u00e4chstes Bild">&#8250;</button>
+            <img id="gaense-lightbox-image" src="" alt="Gro\u00dfansicht Bild">
         </div>
     `;
 
     document.body.appendChild(lightbox);
+}
+
+function navigateLightbox(direction) {
+    const lightbox = document.getElementById('gaense-lightbox');
+    if (!lightbox || lightbox.hidden || _lightboxImages.length <= 1) return;
+
+    _lightboxIndex = (_lightboxIndex + direction + _lightboxImages.length) % _lightboxImages.length;
+    const { src, alt } = _lightboxImages[_lightboxIndex];
+    const lightboxImage = document.getElementById('gaense-lightbox-image');
+    if (lightboxImage) {
+        lightboxImage.src = src;
+        lightboxImage.alt = alt;
+    }
+    updateLightboxNavButtons();
+}
+
+function updateLightboxNavButtons() {
+    const prevBtn = document.getElementById('gaense-lightbox-prev');
+    const nextBtn = document.getElementById('gaense-lightbox-next');
+    const visible = _lightboxImages.length > 1;
+    if (prevBtn) prevBtn.style.display = visible ? '' : 'none';
+    if (nextBtn) nextBtn.style.display = visible ? '' : 'none';
 }
 // Removed legacy loadCSS function entirely to avoid confusion
 

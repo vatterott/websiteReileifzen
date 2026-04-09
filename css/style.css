@@ -394,6 +394,51 @@ a:hover {
 /* --- FOOTER (Neutral Dark for Grounding OR Light) --- */
 /* ---------------------------------------------------------------------- */
 
+/* --- SCROLL TO TOP BUTTON --- */
+#scroll-to-top-btn {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 3000;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: var(--theme-primary, #444);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.30);
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(12px);
+    transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+#scroll-to-top-btn.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+#scroll-to-top-btn:hover {
+    filter: brightness(1.15);
+    transform: translateY(-3px);
+}
+
+@media (max-width: 600px) {
+    #scroll-to-top-btn {
+        bottom: 18px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        font-size: 1.3rem;
+    }
+}
+
 .footer {
     background: #222; /* Keep dark for contrast/grounding even in light theme */
     color: #f2f2f2;
