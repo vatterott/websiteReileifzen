@@ -185,6 +185,13 @@
              "NavItems": []
           },
           {
+             "Name": "Bildarchiv",
+             "Path": "feuerwehr/imagearchive.html",
+             "Icon": "fas fa-images",
+             "cssFile": "",
+             "NavItems": []
+          },
+          {
              "Name": "Dienstplan",
              "Path": "feuerwehr/dienstplan.html",
              "Icon": "fas fa-calendar-days",
