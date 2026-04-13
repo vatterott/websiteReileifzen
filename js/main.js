@@ -191,8 +191,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    // Handle initial load if we had hash routing, 
-    // but for now we just start at Welcome.
+    // Restore subpage on browser refresh: read path from URL hash
+    const initialHash = window.location.hash;
+    if (initialHash && initialHash.length > 1) {
+        const path = decodeURIComponent(initialHash.substring(1));
+        const css = inferCssFromPath(path);
+        history.replaceState({ path: path, css: css, title: '' }, '', window.location.href);
+        loadContent(path, css);
+        updateFooterByPath(path);
+    }
 });
 
 function setSubmenuOpenState(menuItem, isOpen) {
