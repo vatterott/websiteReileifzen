@@ -2,50 +2,152 @@
     <h1>Bildergalerie</h1>
     <p>Einblicke rund um die Gänsetränke in Reileifzen.</p>
 
-    <section class="gaense-gallery-section">
-        <h2>Außenbereich</h2>
-        <div class="gaense-gallery-grid">
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (45).jpg" alt="Außenbereich der Gänsetränke - Bild 45" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (54).jpg" alt="Außenbereich der Gänsetränke - Bild 54" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (55).jpg" alt="Außenbereich der Gänsetränke - Bild 55" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (56).jpg" alt="Außenbereich der Gänsetränke - Bild 56" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (48).jpg" alt="Außenbereich der Gänsetränke - Bild 48" loading="lazy"></figure>
-        </div>
-    </section>
-<hr>
-    <section class="gaense-gallery-section">
-        <h2>Innenraum</h2>
-        <div class="gaense-gallery-grid">
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (44).jpg" alt="Innenraum der Gänsetränke - Bild 44" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (37).jpg" alt="Innenraum der Gänsetränke - Bild 37" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (46).jpg" alt="Innenraum der Gänsetränke - Bild 46" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (1).jpg" alt="Innenraum der Gänsetränke - Bild 1" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (30).jpg" alt="Innenraum der Gänsetränke - Bild 30" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (31).jpg" alt="Innenraum der Gänsetränke - Bild 31" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (49).jpg" alt="Innenraum der Gänsetränke - Bild 49" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (57).jpg" alt="Innenraum der Gänsetränke - Bild 57" loading="lazy"></figure>
-        </div>
-    </section>
-<hr>
-    <section class="gaense-gallery-section">
-        <h2>Impressionen</h2>
-        <div class="gaense-gallery-grid">
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (32).jpg" alt="Impression aus der Gänsetränke - Bild 32" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (33).jpg" alt="Impression aus der Gänsetränke - Bild 33" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (34).jpg" alt="Impression aus der Gänsetränke - Bild 34" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (35).jpg" alt="Impression aus der Gänsetränke - Bild 35" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (36).jpg" alt="Impression aus der Gänsetränke - Bild 36" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (38).jpg" alt="Impression aus der Gänsetränke - Bild 38" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (39).jpg" alt="Impression aus der Gänsetränke - Bild 39" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (40).jpg" alt="Impression aus der Gänsetränke - Bild 40" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (41).jpg" alt="Impression aus der Gänsetränke - Bild 41" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (42).jpg" alt="Impression aus der Gänsetränke - Bild 42" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (43).jpg" alt="Impression aus der Gänsetränke - Bild 43" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (47).jpg" alt="Impression aus der Gänsetränke - Bild 47" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (50).jpg" alt="Impression aus der Gänsetränke - Bild 50" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (52).jpg" alt="Impression aus der Gänsetränke - Bild 52" loading="lazy"></figure>
-            <figure><img src="../gaensetraenke/Gallerie/Galerie (53).jpg" alt="Impression aus der Gänsetränke - Bild 53" loading="lazy"></figure>           
-        </div>
-    </section>
+    <div class="gst-category-filter" id="gst-category-filter">
+        <button class="gst-category-btn active" data-category="all">Alle</button>
+        <button class="gst-category-btn" data-category="aussen">Außenbereich</button>
+        <button class="gst-category-btn" data-category="innen">Innenraum</button>
+        <button class="gst-category-btn" data-category="impressionen">Impressionen</button>
+    </div>
 
+    <p class="gst-gallery-status" id="gst-gallery-status"></p>
+    <div class="gaense-gallery-grid" id="gst-gallery-grid"></div>
+    <button class="gst-load-more" id="gst-load-more" hidden>Mehr anzeigen</button>
 </div>
+
+<script>
+(function () {
+    var PAGE_SIZE = 24;
+    var currentCategory = 'all';
+    var currentPage = 0;
+    var currentItems = [];
+    var allItems = [];
+
+    function filterByCategory(category) {
+        if (category === 'all') return allItems.slice();
+        return allItems.filter(function (item) { return item.category === category; });
+    }
+
+    function renderPage(items, startIdx) {
+        var grid = document.getElementById('gst-gallery-grid');
+        var slice = items.slice(startIdx, startIdx + PAGE_SIZE);
+        slice.forEach(function (item) {
+            var fig = document.createElement('figure');
+            var img = document.createElement('img');
+            img.src = 'gaensetraenke/Gallerie/' + item.filename;
+            img.alt = item.title;
+            img.loading = 'lazy';
+            fig.appendChild(img);
+            var cap = document.createElement('figcaption');
+            cap.textContent = item.title;
+            fig.appendChild(cap);
+            grid.appendChild(fig);
+        });
+    }
+
+    function updateStatus(shown, total) {
+        var s = document.getElementById('gst-gallery-status');
+        if (s) s.textContent = shown + ' von ' + total + ' Bildern';
+    }
+
+    function showCategory(category) {
+        currentCategory = category;
+        currentPage = 0;
+        currentItems = filterByCategory(category);
+
+        var grid = document.getElementById('gst-gallery-grid');
+        grid.innerHTML = '';
+
+        renderPage(currentItems, 0);
+        currentPage = 1;
+
+        var shown = Math.min(PAGE_SIZE, currentItems.length);
+        updateStatus(shown, currentItems.length);
+
+        var btn = document.getElementById('gst-load-more');
+        btn.hidden = currentItems.length <= PAGE_SIZE;
+    }
+
+    function attachEventListeners() {
+        // Category filter buttons
+        document.getElementById('gst-category-filter').addEventListener('click', function (e) {
+            var btn = e.target.closest('.gst-category-btn');
+            if (!btn) return;
+            document.querySelectorAll('.gst-category-btn').forEach(function (b) {
+                b.classList.remove('active');
+            });
+            btn.classList.add('active');
+            showCategory(btn.getAttribute('data-category'));
+        });
+
+        // Load more
+        document.getElementById('gst-load-more').addEventListener('click', function () {
+            var startIdx = currentPage * PAGE_SIZE;
+            renderPage(currentItems, startIdx);
+            currentPage++;
+            var shown = Math.min(currentPage * PAGE_SIZE, currentItems.length);
+            updateStatus(shown, currentItems.length);
+            if (shown >= currentItems.length) {
+                document.getElementById('gst-load-more').hidden = true;
+            }
+        });
+
+        // Lightbox clicks – pass ALL current image items for full navigation
+        document.getElementById('gst-gallery-grid').addEventListener('click', function (e) {
+            var img = e.target.closest('figure img');
+            if (!img) return;
+            e.stopPropagation(); // prevent main.js document handler from overwriting
+
+            var clickedSrc = img.getAttribute('src');
+            var idx = 0;
+            for (var i = 0; i < currentItems.length; i++) {
+                var expectedSrc = 'gaensetraenke/Gallerie/' + currentItems[i].filename;
+                if (clickedSrc === expectedSrc || clickedSrc.endsWith('/' + currentItems[i].filename)) {
+                    idx = i;
+                    break;
+                }
+            }
+
+            var lightboxImages = currentItems.map(function (item) {
+                return { src: 'gaensetraenke/Gallerie/' + item.filename, alt: item.title };
+            });
+
+            if (typeof openGaenseLightbox === 'function') {
+                openGaenseLightbox(lightboxImages[idx].src, lightboxImages[idx].alt, lightboxImages, idx);
+            }
+        });
+
+        // Auto-load next DOM page when lightbox navigation nears the rendered boundary
+        if (typeof registerLightboxLoadMoreCallback === 'function') {
+            registerLightboxLoadMoreCallback(function (lightboxIdx) {
+                var renderedImages = document.querySelectorAll('#gst-gallery-grid figure').length;
+                if (lightboxIdx >= renderedImages - 3 && currentPage * PAGE_SIZE < currentItems.length) {
+                    var startIdx = currentPage * PAGE_SIZE;
+                    renderPage(currentItems, startIdx);
+                    currentPage++;
+                    var shown = Math.min(currentPage * PAGE_SIZE, currentItems.length);
+                    updateStatus(shown, currentItems.length);
+                    if (shown >= currentItems.length) {
+                        document.getElementById('gst-load-more').hidden = true;
+                    }
+                }
+            });
+        }
+    }
+
+    // Load media list from JSON, then initialise
+    fetch('gaensetraenke/Gallerie/media.json')
+        .then(function (r) {
+            if (!r.ok) throw new Error('HTTP ' + r.status);
+            return r.json();
+        })
+        .then(function (data) {
+            allItems = data;
+            attachEventListeners();
+            showCategory('all');
+        })
+        .catch(function () {
+            var s = document.getElementById('gst-gallery-status');
+            if (s) s.textContent = 'Fehler beim Laden der Mediendaten.';
+        });
+}());
+</script>
