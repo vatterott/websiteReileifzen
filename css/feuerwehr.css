@@ -318,6 +318,27 @@ body {
     text-overflow: ellipsis;
 }
 
+/* Video items in gallery */
+.gaense-gallery-grid .fw-video-item {
+    cursor: default;
+}
+
+.gaense-gallery-grid .fw-video-item video {
+    width: 100%;
+    height: 200px;
+    object-fit: contain;
+    display: block;
+    background: #111;
+}
+
+.gaense-gallery-grid .fw-video-item a[download] {
+    display: block;
+    padding: 6px 10px;
+    font-size: 0.78rem;
+    color: var(--theme-primary);
+    text-align: center;
+}
+
 /* "Mehr anzeigen"-Button */
 .fw-load-more {
     display: block;
