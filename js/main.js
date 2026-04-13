@@ -1,6 +1,11 @@
 // Lightbox navigation state
 let _lightboxImages = [];
 let _lightboxIndex  = -1;
+let _lightboxLoadMoreCallback = null;
+
+function registerLightboxLoadMoreCallback(cb) {
+    _lightboxLoadMoreCallback = cb;
+}
 
 document.addEventListener('DOMContentLoaded', () => {
     loadMenu();
@@ -532,10 +537,13 @@ function openGaenseLightbox(imageSrc, imageAlt, images, index) {
     if (!lightbox || !lightboxImage || !imageSrc) return;
 
     if (Array.isArray(images) && images.length > 1) {
-        _lightboxImages = images.map(img => ({
-            src: img.getAttribute('src'),
-            alt: img.getAttribute('alt') || 'Großansicht Bild'
-        }));
+        _lightboxImages = images.map(item => {
+            // Accept both DOM img elements and plain {src, alt} objects
+            if (item && typeof item.getAttribute === 'function') {
+                return { src: item.getAttribute('src'), alt: item.getAttribute('alt') || 'Großansicht Bild' };
+            }
+            return { src: item.src || '', alt: item.alt || 'Großansicht Bild' };
+        });
         _lightboxIndex = (typeof index === 'number') ? index : 0;
     } else {
         _lightboxImages = [{ src: imageSrc, alt: imageAlt || 'Großansicht Bild' }];
@@ -578,6 +586,7 @@ function ensureGaenseLightbox() {
             <button type="button" class="gaense-lightbox-nav gaense-lightbox-prev" id="gaense-lightbox-prev" aria-label="Vorheriges Bild">&#8249;</button>
             <button type="button" class="gaense-lightbox-nav gaense-lightbox-next" id="gaense-lightbox-next" aria-label="N\u00e4chstes Bild">&#8250;</button>
             <img id="gaense-lightbox-image" src="" alt="Gro\u00dfansicht Bild">
+            <p id="gaense-lightbox-caption" class="gaense-lightbox-caption" aria-live="polite"></p>
         </div>
     `;
 
@@ -588,7 +597,10 @@ function navigateLightbox(direction) {
     const lightbox = document.getElementById('gaense-lightbox');
     if (!lightbox || lightbox.hidden || _lightboxImages.length <= 1) return;
 
-    _lightboxIndex = (_lightboxIndex + direction + _lightboxImages.length) % _lightboxImages.length;
+    const newIndex = _lightboxIndex + direction;
+    if (newIndex < 0 || newIndex >= _lightboxImages.length) return;
+
+    _lightboxIndex = newIndex;
     const { src, alt } = _lightboxImages[_lightboxIndex];
     const lightboxImage = document.getElementById('gaense-lightbox-image');
     if (lightboxImage) {
@@ -596,14 +608,31 @@ function navigateLightbox(direction) {
         lightboxImage.alt = alt;
     }
     updateLightboxNavButtons();
+
+    if (typeof _lightboxLoadMoreCallback === 'function') {
+        _lightboxLoadMoreCallback(_lightboxIndex, _lightboxImages.length);
+    }
 }
 
 function updateLightboxNavButtons() {
     const prevBtn = document.getElementById('gaense-lightbox-prev');
     const nextBtn = document.getElementById('gaense-lightbox-next');
+    const caption = document.getElementById('gaense-lightbox-caption');
     const visible = _lightboxImages.length > 1;
-    if (prevBtn) prevBtn.style.display = visible ? '' : 'none';
-    if (nextBtn) nextBtn.style.display = visible ? '' : 'none';
+    if (prevBtn) {
+        prevBtn.style.display = visible ? '' : 'none';
+        prevBtn.disabled = _lightboxIndex <= 0;
+    }
+    if (nextBtn) {
+        nextBtn.style.display = visible ? '' : 'none';
+        nextBtn.disabled = _lightboxIndex >= _lightboxImages.length - 1;
+    }
+    if (caption && _lightboxImages.length > 0) {
+        const current = _lightboxImages[_lightboxIndex];
+        const title = current ? (current.alt || '') : '';
+        const counter = (_lightboxIndex + 1) + ' / ' + _lightboxImages.length;
+        caption.textContent = title ? title + ' \u2014 ' + counter : counter;
+    }
 }
 // Removed legacy loadCSS function entirely to avoid confusion
 

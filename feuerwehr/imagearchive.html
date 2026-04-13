@@ -124,14 +124,49 @@
             }
         });
 
-        // Lightbox clicks (images only)
+        // Lightbox clicks (images only) – pass ALL image items so navigation
+        // works across the full decade collection, not just the rendered batch.
         document.getElementById('fw-gallery-grid').addEventListener('click', function (e) {
             var img = e.target.closest('figure:not(.fw-video-item) img');
             if (!img) return;
+            e.stopPropagation(); // prevent main.js document handler from overwriting
+
+            var imageItems = currentItems.filter(function (item) { return item.type !== 'video'; });
+            var clickedSrc = img.getAttribute('src');
+            var idx = 0;
+            for (var i = 0; i < imageItems.length; i++) {
+                var expectedEnd = 'feuerwehr/ImageArchive/' + imageItems[i].filename;
+                if (clickedSrc === expectedEnd || clickedSrc.endsWith('/' + imageItems[i].filename)) {
+                    idx = i;
+                    break;
+                }
+            }
+
+            var lightboxImages = imageItems.map(function (item) {
+                return { src: 'feuerwehr/ImageArchive/' + item.filename, alt: item.title };
+            });
+
             if (typeof openGaenseLightbox === 'function') {
-                openGaenseLightbox(img.getAttribute('src'), img.getAttribute('alt') || 'Großansicht');
+                openGaenseLightbox(lightboxImages[idx].src, lightboxImages[idx].alt, lightboxImages, idx);
             }
         });
+
+        // Auto-load next DOM page when lightbox navigation nears the rendered boundary
+        if (typeof registerLightboxLoadMoreCallback === 'function') {
+            registerLightboxLoadMoreCallback(function (lightboxIdx) {
+                var renderedImages = document.querySelectorAll('#fw-gallery-grid figure:not(.fw-video-item)').length;
+                if (lightboxIdx >= renderedImages - 3 && currentPage * PAGE_SIZE < currentItems.length) {
+                    var startIdx = currentPage * PAGE_SIZE;
+                    renderPage(currentItems, startIdx);
+                    currentPage++;
+                    var shown = Math.min(currentPage * PAGE_SIZE, currentItems.length);
+                    updateStatus(shown, currentItems.length);
+                    if (shown >= currentItems.length) {
+                        document.getElementById('fw-load-more').hidden = true;
+                    }
+                }
+            });
+        }
     }
 
     // Load media list from JSON, then initialise
