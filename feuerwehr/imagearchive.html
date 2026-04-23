@@ -4,7 +4,7 @@
        Wähle ein Jahrzehnt und blättere durch die Aufnahmen.</p>
 
     <div class="fw-decade-filter" id="fw-decade-filter">
-        <button class="fw-decade-btn active" data-decade="2010s">2010 – 2012</button>
+        <button class="fw-decade-btn active" data-decade="aktuell">Aktuell</button>
         <button class="fw-decade-btn" data-decade="2000s">2000er</button>
         <button class="fw-decade-btn" data-decade="1990s">1990er</button>
         <button class="fw-decade-btn" data-decade="1980s">1980er</button>
@@ -20,27 +20,13 @@
 <script>
 (function () {
     var PAGE_SIZE = 24;
-    var currentDecade = '2010s';
+    var currentDecade = 'aktuell';
     var currentPage = 0;
     var currentItems = [];
     var allItems = [];
 
-    function getDecade(filename) {
-        if (/^1960_1969_/i.test(filename)) return 'historic';
-        if (/^(1012|1029|1030|1053|1936|1938)_/i.test(filename)) return 'historic';
-        var m = filename.match(/^(\d{4})_/);
-        if (!m) return 'historic';
-        var y = parseInt(m[1], 10);
-        if (y < 1970) return 'historic';
-        if (y < 1980) return '1970s';
-        if (y < 1990) return '1980s';
-        if (y < 2000) return '1990s';
-        if (y < 2010) return '2000s';
-        return '2010s';
-    }
-
     function filterByDecade(decade) {
-        return allItems.filter(function (item) { return getDecade(item.filename) === decade; });
+        return allItems.filter(function (item) { return item.category === decade; });
     }
 
     function renderPage(items, startIdx) {
@@ -178,7 +164,7 @@
         .then(function (data) {
             allItems = data;
             attachEventListeners();
-            showDecade('2010s');
+            showDecade('aktuell');
         })
         .catch(function () {
             var s = document.getElementById('fw-gallery-status');
