@@ -4,8 +4,8 @@
        Wähle ein Jahrzehnt und blättere durch die Aufnahmen.</p>
 
     <div class="fw-decade-filter" id="fw-decade-filter">
-        <button class="fw-decade-btn active" data-decade="aktuell">Aktuell</button>
-        <button class="fw-decade-btn" data-decade="2010s">2010er</button>
+        <button class="fw-decade-btn active" data-decade="Aktuell">Aktuell</button>
+        <button class="fw-decade-btn" data-decade="2010er">2010er</button>
         <button class="fw-decade-btn" data-decade="2000s">2000er</button>
         <button class="fw-decade-btn" data-decade="1990s">1990er</button>
         <button class="fw-decade-btn" data-decade="1980s">1980er</button>
@@ -165,7 +165,7 @@
         .then(function (data) {
             allItems = data;
             attachEventListeners();
-            showDecade('aktuell');
+            showDecade('Aktuell');
         })
         .catch(function () {
             var s = document.getElementById('fw-gallery-status');
